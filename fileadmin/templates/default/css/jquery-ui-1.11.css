@@ -1,0 +1,217 @@
+/** Datepicker **/
+.ui-datepicker-header{
+	text-align: center;
+	background-color: #12345e;
+}
+.ui-datepicker-header span{
+	font-size: 15px !important;
+	color: #fff;
+}
+.ui-datepicker-header a{
+	position: absolute;
+	cursor: pointer;
+	top: 8px;
+	display: block;
+	width: 30px;
+	height: 30px;
+	text-indent: -9999px;
+	background: url('../images/arrow_calendar.png') no-repeat 0 0;
+}
+.ui-datepicker-header a.ui-datepicker-prev{
+	left: 10px;
+	background-position: 0 0;
+}
+.ui-datepicker-header a.ui-datepicker-next{
+	right: 10px;
+	background-position: 0 100%;
+}
+
+.ui-datepicker-title{
+	padding: 15px 0;
+	margin: 0 !important;
+}
+
+.ui-datepicker-calendar{
+	width: 100%;
+}
+.ui-datepicker-calendar thead{
+	border-left: 1px solid #4a6a91;
+	border-right: 1px solid #4a6a91;
+}
+.ui-datepicker-calendar th{
+	background-color: #58779e;
+	border: none;
+} 
+.ui-datepicker-calendar td{
+	background-color: #12345e; 
+}
+.ui-datepicker-calendar td.event{
+	background-color: #ff5726;
+}
+.ui-datepicker-calendar td.ui-datepicker-current-day a,
+.ui-datepicker-calendar td a:hover{
+	text-decoration: none;
+	background-color: #ff5726;
+	box-shadow: inset 3px 3px 0 0 #ffffff, inset -3px -3px 0 0 #ffffff;
+}
+.ui-datepicker-calendar th, 
+.ui-datepicker-calendar td{
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	border-color: #4a6a91;
+}
+.ui-datepicker-calendar span, .ui-datepicker-calendar a{
+	font-size: 11px !important;
+	display: inline-block;
+	line-height: 30px;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	text-decoration: none;
+	-webkit-transition: all 0.3s ease-in-out;
+	   -moz-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+}	
+
+.ui-datepicker-calendar .ui-state-disabled{
+	display: table-cell;
+}
+/** Fin Datepicker **/
+
+/** Select **/
+.input-select{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 10px 0;
+}
+
+.ui-selectmenu-button{
+	display: inline-block;
+	position: relative;
+	color: #ff5726;
+	font-size: 22px;
+	width: auto !important;
+	cursor: pointer;
+}
+.ui-selectmenu-button span.ui-selectmenu-text{
+	font-size: inherit;
+	color: inherit;
+	margin-left: 40px;
+	background-color: #fff;
+	padding: 6px 15px;
+	display: block;
+	min-width: 305px;
+}
+.ui-selectmenu-button span.ui-icon{
+	width: 35px;
+	height: 35px;
+	display: block;
+	background: url('../images/arrow_select.png') no-repeat center center;
+	background-color: #fff;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.ui-selectmenu-menu.ui-selectmenu-open{
+	display: block;
+}
+.ui-selectmenu-menu{
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 40px !important;
+	right: 0;
+	z-index: 15;
+}
+.ui-selectmenu-menu ul{
+	width: 100% !important;
+	max-height: 150px;
+	overflow-y: auto;
+}
+.ui-selectmenu-menu ul li{
+	cursor: pointer;
+	background-color: #fff;
+	margin: 1px 0 0 0;
+	padding: 5px 15px;
+	font-size: 16px;
+	list-style: none;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+}
+.ui-selectmenu-menu ul li:before{
+	display: none !important;
+}
+.modal-content .ui-selectmenu-menu li,
+/*.modal-content .ui-selectmenu-button span.ui-selectmenu-text,*/
+.modal-content .add-datepicker{
+	color: #0f4a71;
+}
+.ui-selectmenu-menu li:hover{
+	color: #ff5726;
+}
+.modal-content .form-add-voyage{
+	display: none;
+}
+/** Fin Select **/
+
+/** Dialog **/
+.ui-dialog .lightbox-default-ui{
+	display: block;
+	padding-top: 20px;
+}
+.lightbox-default-ui{
+	display: none;
+}
+.lightbox-default-ui *{
+	color: #fff;
+}
+
+.ui-dialog .ui-dialog-titlebar{
+	z-index: 1;
+	text-align: center;
+}
+.ui-dialog .ui-dialog-titlebar button{
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	width: 52px;
+	height: 52px;
+	background: url('../images/icon_close.svg') no-repeat center center;
+	text-indent: -9999px;
+	border: none;
+}
+.ui-dialog .ui-dialog-titlebar span{
+	display: none;
+}
+
+.ui-dialog{
+	width: 750px !important;
+	height: auto !important;
+	background-color: #0f4a71;
+	max-width: 90%;
+	position: absolute;
+	padding: 20px 50px 50px 50px;
+	z-index: 999;
+}
+.ui-dialog .video-player{
+	display: block;
+	background-color: #fff;
+	padding: 60px 20px 20px 20px;
+}
+
+.ui-widget-overlay{
+	z-index: 998;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.8);
+}
+
+/** Fin Dialog **/

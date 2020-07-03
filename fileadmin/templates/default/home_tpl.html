@@ -1,0 +1,97 @@
+<f:layout name="{settings.layout}" />
+
+<f:section name="content">
+
+<div id="wrap-home">
+	<div id="home-top">
+		<div class="content-inner">
+			<div id="title-home">
+				<h1><f:format.raw>{title_home}</f:format.raw></h1>
+				<p><f:format.raw>{data.subtitle}</f:format.raw></p>
+			</div>
+			<div id="text-top">
+				<f:format.raw>{txt_header}</f:format.raw>
+			</div>
+			<div class="clear"></div>
+			<div id="image-top">
+				<f:format.raw>{img_header}</f:format.raw>
+			</div>
+		</div>
+	</div>
+	<div id="middle-home">
+		<div class="content-inner">
+			<div class="column-center">
+				<div id="block-discover" class="block-home">
+					<div class="content-discover">
+						<h2><f:translate key='LLL:EXT:tours/Resources/Private/Language/{language}locallang.xlf:tx_tours_domain_model_tours.discover'/> <span><f:translate key='LLL:EXT:tours/Resources/Private/Language/{language}locallang.xlf:tx_tours_domain_model_tours.ourTravels'/></span></h2>
+						<div id="slider-discover">
+							<f:format.raw>{block_discover_slider}</f:format.raw>
+						</div>
+						<div id="info-discover">
+							<f:format.raw>{block_discover_txt}</f:format.raw>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div id="block-ligne" class="block-home">
+					<div class="content-ligne">
+						<f:format.raw>{block_ligne}</f:format.raw>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div id="block-difference" class="block-home">
+					<div class="content-difference">
+						<f:format.raw>{block_difference}</f:format.raw>
+					</div>
+				</div>
+			</div>
+			<div id="block-reservation" class="block-home">
+				<div class="content-reservation">
+					<f:format.raw>{block_booking}</f:format.raw>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="column-right">
+				<div id="block-image" class="block-image">
+					<div class="content-image">
+						<f:format.raw>{block_advert}</f:format.raw>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div id="block-image2" class="block-image">
+					<div class="content-image">
+						<f:format.raw>{block_advert2}</f:format.raw>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div id="block-network">
+					<div class="content-network">
+						<f:format.raw>{block_network}</f:format.raw>
+						<div class="csc-textpic csc-textpic-center csc-textpic-above">
+							<div class="csc-textpic-imagewrap">
+								<ul>
+									<li><img src="fileadmin/templates/default/images/icon_facebook.png" width="34" height="34" alt="Page Facebook" title="Page Facebook"/></li>
+									<li><a href="https://twitter.com/autocarsimbert" target="_blank" rel="nofollow" title="Page Twitter"><img src="fileadmin/templates/default/images/icon_twitter.png" width="35" height="34" alt="Page Twitter"/></a></li>
+									<li><a href="https://business.google.com/b/116695766008819668157/dashboard/l/03856112795967451578" target="_blank" title="Page Google+"><img src="fileadmin/templates/default/images/icon_google+.png" width="35" height="34" alt="Page Google+"/></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+			<!--<div id="block-twitter">
+				<div class="content-twitter">
+					<p class="title-txt">En direct <span>#imbert</span></p>
+					<div id="twitter">
+						<f:format.raw>{block_twitter}</f:format.raw>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>-->
+		</div>
+	</div>
+</div>
+				
+</f:section>

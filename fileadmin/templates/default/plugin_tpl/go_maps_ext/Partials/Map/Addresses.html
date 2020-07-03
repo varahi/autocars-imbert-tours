@@ -1,0 +1,7 @@
+<ul class="gme-addresses">
+	<f:for each="{addresses}" as="address">
+		<li>
+			<f:link.action arguments="{address:address.uid}" additionalAttributes="{data-address:address.uid}" class="js-gme-address">{address.address}</f:link.action>
+		</li>
+	</f:for>
+</ul>

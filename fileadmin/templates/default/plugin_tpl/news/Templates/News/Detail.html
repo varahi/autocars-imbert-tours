@@ -1,0 +1,71 @@
+{namespace n=Tx_News_ViewHelpers}
+
+<f:layout name="Detail.html" />
+
+<!--
+	=====================
+		News/Detail.html
+-->
+
+<f:section name="content">
+	<f:if condition="{newsItem}">
+		<f:then>
+			<div class="news">	
+				<f:if condition="{settings.backPid}">
+					<div class="bt-back">
+						<f:link.page pageUid="{settings.backPid}">
+							<f:translate key="back-link" />
+						</f:link.page>
+					</div>
+				</f:if>
+
+				<f:if condition="{newsItem.contentElements}">
+					<!-- content elements -->
+					<f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">{newsItem.contentElementIdList}</f:cObject>
+				</f:if>
+
+				<div class="info-news">
+					<f:if condition="{settings.detail.showSocialShareButtons}">
+						<ul>
+							<li class="like">
+								<div>
+									<n:social.facebook.like width="100" layout="box_count"></n:social.facebook.like>
+								</div>
+							</li>
+							<li class="share">
+								<div>
+									<n:social.facebook.share type="box_count">Share</n:social.facebook.share>
+								</div>
+							</li>
+							<li class="twitter">
+								<div>
+									<n:social.twitter datacount="vertical">Twitter</n:social.twitter>
+								</div>
+							</li>
+						</ul>
+					</f:if>
+				</div>
+				<div class="slider-travel slider-news">
+					<f:render partial="Detail/FalMediaContainer" arguments="{media: newsItem.falMedia, settings:settings}" />
+					<f:render partial="Detail/MediaContainer" arguments="{media: newsItem.media, settings:settings}" />
+				</div>
+				<div class="clear"></div>
+				<!-- main text -->
+				<div class="content-news">
+					<f:format.html>{newsItem.bodytext}</f:format.html>
+				</div>
+				<f:if condition="{newsItem.tags}">
+					<ul class="tag">
+						<f:for each="{newsItem.tags}" as="tag">	
+							<li>{tag.title}</li>
+						</f:for>
+					</ul>
+				</f:if>
+
+			</div>
+		</f:then>
+		<f:else>
+
+		</f:else>
+	</f:if>
+</f:section>

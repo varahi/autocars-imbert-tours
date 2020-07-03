@@ -1,0 +1,17 @@
+<f:if condition="{media}">
+	<!-- media files -->
+	<ul class="news-img-wrap">
+		<f:for each="{media}" as="mediaElement">
+			<li class="outer">
+				<f:if condition="{mediaElement.type} == 0">
+					<f:render partial="Detail/MediaImage" arguments="{mediaElement: mediaElement, settings:settings}" />
+				</f:if>
+				<f:if condition="{mediaElement.type} == 1">
+					<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement, settings:settings}" />
+				</f:if>
+			</li>
+		</f:for>
+	</ul>
+</f:if>
+
+

@@ -1,0 +1,91 @@
+
+<div class="message-headband">
+	<p>
+		LES NOUVELLES NAVETTES ENTRE MARSEILLE/PARIS SONT EN LIGNE. VOUS POUVEZ RÉSERVER DÈS MAINTENANT
+	</p>
+</div>
+<header>
+	<div class="content-inner">
+		<div id="logo">
+			<a itemprop="url" rel="home" href="/" title="Autocar Imbert"><img src="fileadmin/templates/default/images/logo.png" width="383" height="160" alt="Autocar Imbert"/></a>
+			<span itemprop="name">Autocars Imbert</span>
+		</div>
+		<div class="right-header">
+			<div id="header-top">
+				<div class="content-header">
+					<div id="language">
+						<f:format.raw>{language_menu}</f:format.raw>
+					</div>
+					<div id="space-menu">
+						<p><f:translate key='LLL:EXT:tours/Resources/Private/Language/{language}locallang.xlf:tx_tours_domain_model_tours.personnalArea'/></p>
+						<f:format.raw>{connexion}</f:format.raw>
+					</div>
+					<div id="header-menu">
+						<f:format.raw>{bt_booking}</f:format.raw>
+					</div>
+					<div id="contact-header">
+						<f:format.raw>{contact}</f:format.raw>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div id="header-bottom">
+				<div class="mobile-menu"><span>Menu</span></div>
+				<div class="hover-menu">
+					<nav id="main-menu">
+						<f:comment>
+						<f:format.raw>{main_menu}</f:format.raw>
+						</f:comment>
+						<f:render partial="Sitemenu" />
+						
+					</nav>
+					<!--<div id="bt-booking-menu">
+						<f:link.page pageUid="53">Je réserve mon transport</f:link.page>
+					</div>-->
+					<div id="search">
+						<f:format.raw>{search}</f:format.raw>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</header>
+	<f:render section="content" />
+<footer>
+	<div class="content-inner">
+		<div id="logo-footer">
+			<a href="" title="Autocar Imbert"><img src="fileadmin/templates/default/images/logo_footer.png" width="246" height="26" alt="Autocar Imbert"/></a>
+		</div>
+		<div id="partner-footer">						
+			<f:format.raw>{block_partner}</f:format.raw>
+			<div class="csc-textpic csc-textpic-center csc-textpic-above">
+				<div class="csc-textpic-imagewrap">
+					<ul>
+						<li><a href="http://guillestre-tourisme.com/" target="_blank" rel="nofollow" title="Office de tourisme de Guillestre"><img src="fileadmin/templates/default/images/logo_guillestre.png" width="171" height="78" alt="Office de tourisme de Guillestre"/></a></li>
+						<li><img src="fileadmin/templates/default/images/logo_axa.png" width="117" height="33" alt="AXA Green miles" title="AXA Green miles"/></li>
+						<li><img src="fileadmin/templates/default/images/logo_05voyageur.png" width="121" height="64" alt="Bouger autrement 05 Voyageurs" title="Bouger autrement 05 Voyageurs"/></li>
+						<li><img src="fileadmin/templates/default/images/logo_hautes_alpes.png" width="156" height="32" alt="Hautes-Alpes le département" title="Hautes-Alpes le département"/></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="footer-menu">
+			<f:comment>
+			<f:format.raw>{main_menu}</f:format.raw>
+			</f:comment>
+			<f:render partial="Sitemenu" />
+		</div>
+		<div id="copyright-menu">
+			<f:format.raw>{copyright_menu}</f:format.raw>
+		</div>
+		<div class="clear"></div>
+	</div>
+</footer>
+<div class="cookie-message">
+	<p>Les cookies nous permettent de garantir le bon fonctionnement de nos services. 
+	En poursuivant votre navigation sur ce site, vous acceptez l'utilisation des cookies. <a href="/fr/infos/credits-et-mentions-legales.html">Cliquez ici</a> pour en savoir plus</p>
+</div>
+<div id="go-top"><span></span></div>
+	

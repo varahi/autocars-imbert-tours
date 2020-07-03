@@ -1,0 +1,32 @@
+<div id="page">
+	<header>
+		<div class="content-header">
+			<div id="logo-head"><a href="/" title="Club Média Méditerrannée"><img src="fileadmin/templates/default/images/logo.png" width="247" height="99" alt="Club Média Méditerrannée"/></a></div>
+			<div id="right-head">
+				<p>Découvrez l'offre publicitaire en Méditerranée</p>
+				<div id="social-network">
+					<a class="bt-rose" href="#" title="Nous suivre">Nous suivre</a>
+					<ul>
+						<li><a href="http://www.busiboost.fr/societe/club-media-mediterranee.html" target="_blank" title="Buziboost"><img src="fileadmin/templates/default/images/icon_buziboost.png" width="30" height="28" alt="Buziboost"/>Buziboost</a></li>
+						<li><a href="https://twitter.com/clubmediamed" target="_blank" title="Twitter"><img src="fileadmin/templates/default/images/icon_twitter.png" width="28" height="28" alt="Twitter"/>Twitter</a></li>
+						<li><a href="https://www.facebook.com/pages/Club-média-méditerranée/143842318994253" target="_blank" title="Facebook"><img src="fileadmin/templates/default/images/icon_facebook.png" width="28" height="28" alt="Facebook"/>Facebook</a></li>
+						<li><a href="#" target="_blank" title="Viadeo"><img src="fileadmin/templates/default/images/icon_viadeo.png" width="28" height="28" alt="Viadeo"/>Viadeo</a></li>
+						<li><a href="#" target="_blank" title="Linkedin"><img src="fileadmin/templates/default/images/icon_linkedin.png" width="28" height="28" alt="Linkedin"/>Linkedin</a></li>
+					</ul>
+				</div>
+				<div id="connect-head">
+					<f:format.raw>{connect_head}</f:format.raw>
+				</div>
+				<nav id="nav-main">
+					<div class="menu-mobile"><a href="#" title="Menu">Menu</a></div>
+					 <f:cObject typoscriptObjectPath="menu.principal" />
+				</nav>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</header>
+	<f:render section="content" />
+	<div id="copyright">
+		<f:cObject typoscriptObjectPath="menu.footer" />
+	</div>
+</div>

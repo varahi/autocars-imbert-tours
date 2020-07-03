@@ -1,0 +1,95 @@
+/**********Ne pas supprimer debut*********/
+p.align-center{ text-align:center;}
+p.align-left{ text-align:left;}
+p.align-right{ text-align:right;}
+p.align-justify{ text-align:justify;}
+div.indent{ margin-left:20px;}
+p.indent{ margin-left:20px;}
+td.align-center{ text-align:center;}
+td.align-left{ text-align:left;}
+td.align-right{ text-align:right;}
+td.align-justify{ text-align:justify;}
+tr.align-center{ text-align:center;}
+tr.align-left{ text-align:left;}
+tr.align-right{ text-align:right;}
+tr.align-justify{ text-align:justify;}
+/**********Ne pas supprimer fin*********/
+
+p.size_16, span.size_16, a.size_16, li.size_16 {
+    font-size: 16px !important;
+    line-height: 20px !important;
+}
+p.size_18 , span.size_18, a.size_18, li.size_18{
+    font-size: 18px !important;
+    line-height: 22px !important;
+}
+p.size_24, span.size_24, a.size_24, li.size_24 {
+    font-size: 24px !important;
+    line-height: 26px !important;
+}
+p.size_36, span.size_36, a.size_36, li.size_36 {
+    font-size: 36px !important;
+    line-height: 40px !important;
+}
+
+a.bt-bordure-bleu, a.bt-bordure-orange{
+	display: inline-block;
+	text-transform: uppercase;
+	border-bottom: 2px solid #17a1d6 !important;
+	font-size: 18px;
+	padding: 5px 0;	
+}
+
+a.bt-bordure-orange{
+	border-bottom-color: #ff5726 !important;
+}
+
+p.text-plan{}
+
+p.txt-bleu, span.txt-bleu, a.txt-bleu, li.txt-bleu{
+	color: #19acdf !important;
+}
+p.txt-bleu-fonce, span.txt-bleu-fonce, a.txt-bleu-fonce, li.txt-bleu-fonce{
+	color: #0f4a71 !important;
+}
+
+p.txt-orange, span.txt-orange, a.txt-orange, li.txt-orange{
+	color: #ff5726 !important;
+}
+
+p.bg-orange, div.bg-orange, li.bg-orange{
+	padding: 11px 20px;
+	margin: 0;
+	background-color: #ff5726 !important;
+}
+.bg-orange *{
+	color: #fff;
+	margin: 0;
+}
+
+p.tel{
+	font-size: 12px;
+	background: url('../images/icon_phone_blue.png') no-repeat left top;
+	padding-left: 37px;
+	margin-bottom: 5px;
+}
+p.tel span{
+	display: block;
+	font-size: 22px;
+	line-height: 1;
+}
+
+a.mail{
+	font-size: 15px;
+	background: url('../images/icon_mail_blue.png') no-repeat left center;
+	padding-left: 37px;
+}
+
+span.span-tag{}
+p.title-txt{}
+
+p.block-blue, h1.block-blue, h2.block-blue{
+	border: 1px solid #0f4a71;
+	padding: 10px 20px;
+	color: #67A53A;
+}

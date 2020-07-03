@@ -1,0 +1,173 @@
+/** Slider découvrir **/
+#slider-discover {
+	position: relative;
+	max-width: 220px;
+	margin: 0 auto;
+}
+#slider-discover li{
+	margin: 0;
+	list-style: none;
+}
+#slider-discover li img{
+	width: 100%;
+	height: auto;
+}
+#slider-discover .caption, #slider-discover .csc-textpic-text{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: #0f4a71;
+	background-color: rgba(15,74,113,0.85);
+	text-align: center;
+	padding: 10px 5px;
+}
+#slider-discover .caption h3, #slider-discover .csc-textpic-text h3{
+	color: #fff;
+	font-size: 15px;
+	font-weight: 400;
+	margin: 0;
+	text-transform: uppercase;
+}
+#slider-discover .caption p, #slider-discover .csc-textpic-text p{
+	color: #fff;
+	font-size: 13px;
+	margin: 0;
+}
+
+#slider-discover .bx-pager{
+	height: 55px;
+	text-align: center;
+}
+#slider-discover .bx-pager .bx-pager-item{
+	display: inline-block;
+	margin: 25px 2px;
+}
+#slider-discover .bx-pager .bx-pager-item a{
+	display: block;
+	width: 5px;
+	height: 5px;
+	border-radius: 5px;
+	background-color: #fff;
+	text-indent: -9999px;
+	-webkit-transition: all 0.3s ease-in-out;
+	   -moz-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+}
+#slider-discover .bx-pager .bx-pager-item a:hover,
+#slider-discover .bx-pager .bx-pager-item a.active{
+	background-color: #19acdf;
+}
+
+#slider-discover .bx-controls-direction a{
+	position: absolute;
+	bottom: 20px;
+	width: 15px;
+	height: 15px;
+	background: url('../images/arrow_slider.png') no-repeat 0 0;
+	display: block;
+	text-indent: -9999px;
+}
+#slider-discover .bx-controls-direction a.bx-prev{
+	left: 0;
+	background-position: 0 0;
+}
+#slider-discover .bx-controls-direction a.bx-next{
+	right: 0;
+	background-position: 0 100%;
+}
+/** Fin Slider découvrir **/
+/** Slider voyage **/
+
+.slider-travel{
+	display: block;
+	margin-right: 200px;
+	position: relative;
+}
+.slider-travel .bx-viewport ul{
+	margin: 0 !important;
+}
+#detail-travel .slider-travel .bx-wrapper, #detail-travel .slider-travel .bx-viewport, #detail-travel .slider-travel .bx-viewport div, #detail-travel .slider-travel .bx-viewport ul{
+	height: 100% !important;
+}
+.slider-travel ul li{
+	list-style: none;
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+	text-align: center;
+	padding: 0 !important;
+}
+.slider-travel ul li:before{
+	display: none !important;
+}
+.slider-travel ul li img{
+	height: 100%;
+	width: auto;
+	margin: 0 auto;
+}
+
+.slider-travel ul li .caption, .slider-travel ul li .news-img-caption{
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+	right: 48px;
+	font-size: 14px;
+	margin: 0;
+	height: auto !important;
+	line-height: 1.2 !important;
+	padding: 16px 20px;
+	background-color: #bfadc1;
+	background-color: rgba(191, 173, 193, 0.9);
+}
+
+.slider-travel .bx-controls-direction{
+	position: absolute;
+	right: -48px;
+	bottom: 0;
+}
+.slider-travel .bx-controls-direction a{
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	text-indent: -9999px;
+	background: url('../images/arrow_slider_travel.png') no-repeat 0 0;
+	background-color: #fff;
+	-webkit-transition: background-color 0.3s ease-in-out;
+	   -moz-transition: background-color 0.3s ease-in-out;
+			transition: background-color 0.3s ease-in-out;
+}
+.slider-travel .bx-controls-direction a:hover{
+	background-color: #bfadc1;
+}
+.slider-travel .bx-controls-direction a.bx-prev{
+	background-position: 0 0;
+}
+.slider-travel .bx-controls-direction a.bx-next{
+	background-position: 100% 0;
+}
+.slider-travel .bx-controls-direction a.bx-prev:hover{
+	background-position: 0 100%;
+}
+.slider-travel .bx-controls-direction a.bx-next:hover{
+	background-position: 100% 100%;
+}
+
+/** Fin Slider voyage **/
+
+.bx-wrapper .bx-loading {
+	min-height: 50px;
+	background: url('../images/bx_loader.gif') center center no-repeat;
+	background-color: #fff;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2000;
+}
+.flex-direction-nav a.disabled{
+	display: none;
+}
+.bx-controls-direction a.disabled{
+	display: none;
+}

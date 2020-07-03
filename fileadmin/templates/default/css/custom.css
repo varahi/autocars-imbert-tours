@@ -1,0 +1,14 @@
+#middle-office-list .bt-copy {
+    display: inline-block;
+    background: url('../images/bt-copy.png') no-repeat center top;
+}
+#middle-office-list .bt-edit {
+    display: inline-block;
+}
+
+.edit-input {
+    padding: 15px 3px !important;
+}
+.edit-select {
+
+}
