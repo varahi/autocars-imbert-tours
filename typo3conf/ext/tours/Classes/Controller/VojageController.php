@@ -2389,13 +2389,13 @@ class VojageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      */
     public function updateVojageAction(\Autocars\Tours\Domain\Model\Vojage $voyage)
     {
-        \TYPO3\CMS\Core\Utility\DebugUtility::debug($_POST);
+        \TYPO3\CMS\Core\Utility\DebugUtility::debug($voyage);
 
         //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($fromList, 'fromList');
         //$this->vojageRepository->update($voyage);
         //$this->persistenceManager->persistAll();
         //$this->flashMessageService('tx_tours.voyageUdpated', 'successfullyStatus', 'OK');
-        //$this->redirect('','',null,array(), $this->settings['redirectPage']);
+        //$this->redirect('MiddleOffice','Vojage',null, array(), $this->settings['redirectPage']);
     }
 
     /**
