@@ -1,0 +1,62 @@
+<!-- Builds the list of the cities, that user can start traveling from
+     
+	fromLabel: 
+		Represents the text that located before list itsef
+
+     fromActive:
+        Represents a position of the active city
+        Useful on the [step-1, step-2] when plugin is located on the right side to display the active city
+
+    arrivalList:
+    	The array that contains all the cities
+-->
+
+<div class="radio-grp from-group ">
+	<label>{fromLabel}</label>
+	
+	<f:if condition="{fromActive}!='-1'"> <!-- If the user has triggered one of the cities before -->
+	    <f:then>
+		    <f:for each="{arrivalList}" as="from" iteration="i">
+				<f:if condition="{i.index}=={fromActive}"><f:then> <!-- Set the active city, that user has choosen before -->
+		     		 <div class="input-radio active">
+						<input type="radio" class="from-city from-city__{from.title}" name="depart" checked id="{from.title}"/>
+						<label for="{from.title}">
+							{from.title}
+							<small><f:for each="{from.areas}" as="area"> • {area}</f:for></small>
+						</label>
+					</div>
+				</f:then><f:else>
+					<div class="input-radio">
+						<input type="radio" class="from-city from-city__{from.title}" name="depart" id="{from.title}"/>
+						<label for="{from.title}" >
+							{from.title}
+							<small><f:for each="{from.areas}" as="area"> • {area}</f:for></small>
+						</label>
+					</div>
+				</f:else></f:if>
+			</f:for>
+	    </f:then>
+
+	    <f:else> <!-- If the user has never triggered the city before -->
+	      	<f:for each="{arrivalList}" as="from" iteration="i">
+				<f:if condition="{i.isLast}"><f:then> <!-- The active arrival city if the first one -->
+		     		 <div class="input-radio active">
+						<input type="radio" class="from-city from-city__{from.title}" name="depart" checked id="{from.title}"/>
+						<label for="{from.title}">
+							{from.title}
+							<small><f:for each="{from.areas}" as="area"> • {area}</f:for></small>
+						</label>
+					</div>
+				</f:then><f:else>
+					<div class="input-radio">
+						<input type="radio" class="from-city from-city__{from.title}" name="depart" id="{from.title}"/>
+						<label for="{from.title}" >
+							{from.title}
+							<small><f:for each="{from.areas}" as="area"> • {area}</f:for></small>
+						</label>
+					</div>
+				</f:else></f:if>
+			</f:for>
+	    </f:else>
+ 	 </f:if>
+</div>

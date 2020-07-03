@@ -1,0 +1,248 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:layout name="Default" />
+<f:section name="main">
+
+    <a href="" class="bt-add-voyage link-lightbox-ui" title="Ajouter un nouveau voyage" data-dialog="lightbox-add-voyage">Ajouter un nouveau voyage</a>
+    |
+    <f:link.action pageUid="47" action="firstReservationStep" controller="Voyaje" arguments="{from-place: 'Marseille', to-place:'Les Orres'}" title="Créer une réservation">Créer une réservation</f:link.action>
+    |
+    <f:link.action action="formValideOrder" controller="Voyaje" title="Voir les clients qui n'ont pas payé" >Non payés</f:link.action>
+    <div id="middle-office-list">
+        <f:form id="edit-vojage" class="form-vojage" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="updateVojages" pageType="111">
+            <table>
+                <tr>
+                    <th>Places max</th>
+                    <th>Places réservées</th>
+                    <th>Date de départ</th>
+                    <th>Ville de départ</th>
+                    <th>Heure de départ</th>
+                    <th>Date d'arrivée</th>
+                    <th>Ville d'arrivée</th>
+                    <th>Heure d'arrivée</th>
+                    <th>Actions</th>
+                </tr>
+                <f:for each="{voyages}" as="voyage" key="vKey" iteration="vIteration">
+                    <tr>
+                        <td><f:form.textfield name="placeMax" value="{voyage.placesMax}" /> <a href="#" class="bt-save" title="Sauvegarder">Sauvegarder</a></td>
+                        <td><p>{voyage.totalPlacesReservees}</p></td>
+                        <td><p><f:format.date format="%A">{voyage.departureDate}</f:format.date><br><f:format.date format="d/m/Y">{voyage.departureDate}</f:format.date></p></td>
+                        <td><p>{voyage.zoneDepart}</p></td>
+                        <td><p><f:format.date format="H:i">{voyage.departureDate}</f:format.date></p></td>
+                        <td><p><f:format.date format="%A">{voyage.arrivalDate}</f:format.date><br><f:format.date format="d/m/Y">{voyage.arrivalDate}</f:format.date></p></td>
+                        <td><p>{voyage.zoneArrivee}</p></td>
+                        <td><p><f:format.date format="H:i">{voyage.arrivalDate}</f:format.date></p></td>
+                        <td><p>
+								<f:if condition="{voyage.totalPlacesReservees} > 0"><a href="#" class="bt-print" title="Imprimer la liste des passagers">Imprimer la liste des passagers</a> | </f:if>
+								<f:if condition="{voyage.hidden} > 0">
+									<f:then><a href="#" class="bt-show" title="Afficher le voyage sur le site">Afficher le voyage sur le site</a> | </f:then>
+									<f:else><a href="#" class="bt-hidden" title="Cacher le voyage sur le site">Cacher le voyage sur le site</a> | </f:else>
+								</f:if>
+								<a href="#" class="bt-copy link-lightbox-ui" title="Dupliquer le voyage" data-dialog="lightbox-copy-voyage">Dupliquer</a> | 
+								<a href="#" class="bt-delete" title="Supprimer">Supprimer</a>
+							</p>
+                        <div class="list-voyages">
+                                <f:for each="{voyage.tabIdVoyage}" as="idVoyage" key="idVKey" iteration="idVIteration">
+                                        <f:form.hidden name="idVoyage[]" value="{idVoyage}" />
+                                </f:for>
+                        </div>
+                        </td>
+                    </tr>
+                </f:for>
+            </table>
+        </f:form>
+    </div>
+	
+
+	<f:form id="edit-placeMax" class="form-middle" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="updatePlaceMax" pageType="111">
+		<f:form.textfield name="placeMax" value="" />
+		<div class="list-voyages"></div>
+	</f:form>
+	
+	<f:form id="export-resa" class="form-middle" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="exportVoyageurs" pageType="111">
+		<div class="list-voyages"></div>
+	</f:form>
+	
+	<f:form id="delete-voyage" class="form-middle" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="delete" pageType="111">
+		<div class="list-voyages"></div>
+	</f:form>
+	
+	<f:form id="hidden-voyage" class="form-middle" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="hiddenVoyage" pageType="111">
+		<div class="list-voyages"></div>
+	</f:form>
+	
+	<f:form id="show-voyage" class="form-middle" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="showVoyage" pageType="111">
+		<div class="list-voyages"></div>
+	</f:form>
+
+	<div id="lightbox-copy-voyage" class="lightbox-default-ui">
+		<div class="modal-content">
+             <h3>Dupliquer un voyage</h3>
+		</div>
+	</div>
+
+	<div id="lightbox-add-voyage" class="lightbox-default-ui">
+		<div class="modal-content">
+             <h3>Ajouter un nouveau voyage</h3>
+			<div class="input-select">
+				<select id="destinationStart">
+					<option value="0">Choisir un voyage</option>
+					<option value="queyras-paris">Le Queyras - Paris</option>
+					<option value="queyras-marseille">Le Queyras - Marseille</option>
+					<option value="marseille">Marseille - Le Queyras</option>
+					<option value="paris">Paris - Le Queyras</option>
+				</select>
+			</div>
+			<f:form id="form-add-voyage-queyras-paris" class="form-add-voyage form-booking" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="create">
+				<fieldset class="fieldset-aller">
+					<f:form.hidden name="fromLocation" value="12" />
+					<f:form.hidden name="toLocation" value="8" />
+					<div class="list-datepicker">
+						<div class="block-add-voyage">
+							<p class="title">Paris</p>
+							<div class="block-datepicker">
+							
+							</div>
+							<div class="info-datepicker">
+								<p>
+									<f:translate key='tx_tours_domain_model_tours.the'/> 
+									<span class="text-datepicker"></span>
+								</p>
+								<f:form.hidden name="toDate" value="" />
+								<div class="input-date">
+									<span>à </span>
+									<div class="input-select">
+										<f:form.select name="toHour" options="{hours}" />
+									</div>
+									<span>h </span>
+									<div class="input-select">
+										<f:form.select name="toMinute" options="{minutes}" />
+									</div>
+									<span>min</span>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						{v:variable.register.set(name: 'marseille', value: '0')}
+						<f:render partial="Vojage/FormAddVoyage" arguments="{_all}" />
+					</div>
+			</fieldset>
+			</f:form>
+			<f:form id="form-add-voyage-queyras-marseille" class="form-add-voyage form-booking" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="create">
+				<fieldset class="fieldset-aller">
+					<f:form.hidden name="fromLocation" value="12" />
+					<f:form.hidden name="toLocation" value="7" />
+					
+					<div class="list-datepicker">
+						<div class="block-add-voyage">
+							<p class="title">Marseille St Charles</p>
+							<div class="block-datepicker">
+							
+							</div>
+							<div class="info-datepicker">
+								<p>
+									<f:translate key='tx_tours_domain_model_tours.the'/> 
+									<span class="text-datepicker"></span>
+								</p>
+								<f:form.hidden name="toDate" value="" />
+								<div class="input-date">
+									<span>à </span>
+									<div class="input-select">
+										<f:form.select name="toHour" options="{hours}" />
+									</div>
+									<span>h </span>
+									<div class="input-select">
+										<f:form.select name="toMinute" options="{minutes}" />
+									</div>
+									<span>min </span>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						{v:variable.register.set(name: 'marseille', value: '1')}
+						<f:render partial="Vojage/FormAddVoyage" arguments="{_all}" />
+					</div>
+                </fieldset>
+			</f:form>
+			<f:form id="form-add-voyage-marseille" class="form-add-voyage form-booking" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="create">
+				<fieldset class="fieldset-aller">
+					<f:form.hidden name="fromLocation" value="2" />
+					<f:form.hidden name="toLocation" value="13" />
+					
+					<div class="list-datepicker">
+						<div class="block-add-voyage">
+							<p class="title">Marseille St-Charles</p>
+							<div class="block-datepicker">
+							
+							</div>
+							<div class="info-datepicker">
+								<div>
+									<p>
+										<f:translate key='tx_tours_domain_model_tours.the'/> 
+										<span class="text-datepicker"></span>
+									</p>								
+									<f:form.hidden name="fromDate" value="" />
+									<div class="input-date">
+										<span>à </span>
+										<div class="input-select">
+											<f:form.select name="fromHour" options="{hours}" />
+										</div>
+										<span>h </span>
+										<div class="input-select">
+											<f:form.select name="fromMinute" options="{minutes}" />
+										</div>
+										<span>min </span>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						
+						{v:variable.register.set(name: 'marseille', value: '1')}
+						<f:render partial="Vojage/FormAddVoyage" arguments="{_all}" />
+					</div>
+				</fieldset>
+			</f:form>
+			<f:form id="form-add-voyage-paris" class="form-add-voyage form-booking" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="create">
+				<fieldset class="fieldset-aller">
+					<f:form.hidden name="fromLocation" value="5" />
+					<f:form.hidden name="toLocation" value="13" />
+					
+					<div class="list-datepicker">
+						<div class="block-add-voyage">
+							<p class="title">Paris</p>
+							<div class="block-datepicker">
+							
+							</div>
+							<div class="info-datepicker">
+								<p>
+									<f:translate key='tx_tours_domain_model_tours.the'/> 
+									<span class="text-datepicker"></span>
+								</p>
+								<f:form.hidden name="fromDate" value="" />
+								<div class="input-date">
+									<span>à </span>
+									<div class="input-select">
+										<f:form.select name="fromHour" options="{hours}" />
+									</div>
+									<span>h </span>
+									<div class="input-select">
+										<f:form.select name="fromMinute" options="{minutes}" />
+									</div>
+									<span>min </span>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						
+						{v:variable.register.set(name: 'marseille', value: '0')}
+						<f:render partial="Vojage/FormAddVoyage" arguments="{_all}" />
+					</div>
+				</fieldset>
+			</f:form>
+		</div>
+	</div>
+</f:section>

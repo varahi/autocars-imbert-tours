@@ -1,0 +1,153 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+<div class="bt-back">
+	<f:comment><f:link.action pageUid="{previousStepPID}" action="Vojage" controller="firstReservationStep" title="{backButtonLabel}" arguments="{from: '{from}', to: '{to}' }">{backButtonLabel}</f:link.action></f:comment>
+	<a title="{backButtonLabel}" onclick="history.go(-1);">{backButtonLabel} </a>
+</div>
+    
+<div class="Tx-Formhandler">
+	<div id="booking">
+                <f:form id="booking-step2" class="form-booking" method="POST" name="newUsers" pluginName="vojage" controller="Users" action="create" object="{newUsers}" pageType="111">
+			<fieldset>
+                                <f:form.hidden id="adultes" name="nbAdult" value="{nbAdult}" />
+                                <f:form.hidden id="enfants" name="nbChildren" value="{nbChildren}" />
+                                <f:form.hidden id="enfants-de-3" name="nbBaby" value="{nbBaby}" />
+                                <f:form.hidden id="from-id" name="fromId" value="{fromId}" />
+                                <f:form.hidden id="from-time" name="fromTime" value="{fromTime}" />
+                                <f:form.hidden id="from-hour" name="fromHour" value="{fromHour}" />
+                                <f:form.hidden id="from-city" name="fromCity" value="{fromCity}" />
+                                <f:form.hidden id="from-option" name="fromOption" value="{fromOption}" />
+                                <f:form.hidden id="from-time2" name="fromTime2" value="{fromTime2}" />
+                                <f:form.hidden id="from-hour2" name="fromHour2" value="{fromHour2}" />
+                                <f:form.hidden id="from-city2" name="fromCity2" value="{fromCity2}" />
+                                <f:form.hidden id="from-option2" name="fromOption2" value="{fromOption2}" />
+                                <f:form.hidden id="to-id" name="toId" value="{toId}" />
+                                <f:form.hidden id="to-time" name="toTime" value="{toTime}" />
+                                <f:form.hidden id="to-hour" name="toHour" value="{toHour}" />
+                                <f:form.hidden id="to-city" name="toCity" value="{toCity}" />
+                                <f:form.hidden id="to-option" name="toOption" value="{toOption}" />
+                                <f:form.hidden id="to-time2" name="toTime2" value="{toTime2}" />
+                                <f:form.hidden id="to-hour2" name="toHour2" value="{toHour2}" />
+                                <f:form.hidden id="to-city2" name="toCity2" value="{toCity2}" />
+                                <f:form.hidden id="to-option2" name="toOption2" value="{toOption2}" />
+                                <f:form.hidden id="price" name="price" value="{price}" />
+
+				<legend><f:translate key='tx_tours_domain_model_tours.myTransport'/></legend>
+				<div>
+					<div class="recap-transport">
+						<div class="content-recap">
+							<f:if condition="{event}==0">
+								<f:then>
+									<p class="title"><span><f:translate key='tx_tours_domain_model_tours.go'/></span></p>
+								</f:then>
+								<f:else>
+									<p class="title"><span><f:translate key='tx_tours_domain_model_tours.go'/> <f:translate key='tx_tours_domain_model_tours.back'/></span></p>
+								</f:else>
+							</f:if>
+							<p><f:translate key='tx_tours_domain_model_tours.the'/> <span class="txt-orange">{fromTime}</span> <f:translate key='tx_tours_domain_model_tours.from'/> <span class="txt-orange">{fromCity} </span> - <span class="txt-orange">{fromHour}</span> <f:translate key='tx_tours_domain_model_tours.at'/> <span class="txt-orange">{fromCity2} </span> - <span class="txt-orange">{fromHour2}</span></p>
+						</div>
+					</div>
+                                        <f:if condition="{toCity}">
+                                            <div class="recap-transport" >
+                                                    <div class="content-recap">
+                                                            <p class="title"><span><f:translate key='tx_tours_domain_model_tours.back'/></span></p>
+                                                            <p><f:translate key='tx_tours_domain_model_tours.the'/> <span class="txt-orange">{toTime}</span> <f:translate key='tx_tours_domain_model_tours.from'/> <span class="txt-orange">{toCity} </span> - <span class="txt-orange">{toHour}</span> <f:translate key='tx_tours_domain_model_tours.at'/> <span class="txt-orange">{toCity2} </span> - <span class="txt-orange">{toHour2}</span></p>
+                                                    </div>
+                                            </div>
+                                        </f:if>
+					<div class="recap-transport">
+						<div class="content-recap bg-orange">
+							<p class="title"><span><f:translate key='tx_tours_domain_model_tours.tarifTransport'/></span></p>
+							<p class="bg-white"><span>{price} €</span></p>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div> 
+			</fieldset>
+
+			<fieldset>
+				<legend><f:translate key='tx_tours_domain_model_tours.myContact'/></legend>
+				<div class="input-two">
+					<div>
+						<label class="inline " for="nom"><f:translate key='tx_tours_domain_model_tours.lastname'/> *</label>
+                                                <f:form.textfield name="lastName" property="lastName" value="" required="required"/>
+					</div>
+					<div>
+						<label class="inline " for="prenom"><f:translate key='tx_tours_domain_model_tours.firstname'/> *</label>
+                                                <f:form.textfield name="firstName" property="firstName" value="" required="required"/>
+					</div>
+				</div>
+				<div class="input-two">
+					<div>
+						<label class="inline " for="email">Email *</label>
+                                                <f:form.textfield name="email" property="email" value="" required="required" placeholder="contact@mail.com"/>
+					</div>
+					<div>
+						<label class="inline " for="tel"><f:translate key='tx_tours_domain_model_tours.phone'/> *</label>
+                                                <f:form.textfield name="telephone" property="telephone" value="" required="required" placeholder="00 00 00 00 00"/>
+					</div>
+				</div>
+				<div>
+					<label class="inline " for="addresse"><f:translate key='tx_tours_domain_model_tours.address'/> *</label>
+                                        <f:form.textfield name="address" property="address" value="" required="required"/>
+				</div>
+				<div class="input-two">
+					<div>
+						<label class="inline " for="cp"><f:translate key='tx_tours_domain_model_tours.postalCode'/> *</label>
+                                                <f:form.textfield name="zip" property="zip" value="" required="required"/>
+					</div>
+					<div>
+						<label class="inline " for="ville"><f:translate key='tx_tours_domain_model_tours.city'/> *</label>
+                                                <f:form.textfield name="city" property="city" value="" required="required"/>
+					</div>
+				</div>
+			</fieldset>
+			
+			<fieldset class="fieldset-white">
+				<input type="checkbox" id="cdg" name="etape2[cdg]" value="1"  />
+				<label><f:translate key='tx_tours_domain_model_tours.cgv'/> <f:link.page pageUid="79" target="_blank">(<f:translate key='tx_tours_domain_model_tours.readCgv'/>)</f:link.page>.</label>
+			</fieldset>
+
+                        <f:if condition="{isAdmin} == 0">
+                            <f:then>
+                                <fieldset class="fieldset-station">
+                                        <legend><f:translate key='tx_tours_domain_model_tours.paymentType'/></legend>
+                                        <div class="payment-list">
+                                                <ul>
+                                                        <li>
+                                                                <img src="https://www.autocars-imbert.com/fileadmin/templates/default/images/logo_cb.jpg" width="142" height="58" alt="Carte Bleue">
+                                                                <!--<div class="iradio"><input id="payment-cb" type="radio" name="etape2[payment]" value="CB" /></div>-->
+                                                        </li>
+                                                </ul>
+                                                <p><small><f:translate key='tx_tours_domain_model_tours.paymentSecure'/></small></p>
+                                        </div>
+                                </fieldset> 
+
+                                <div>
+                                        <input type="submit" name="payment" id="submit-etape2" class="submit-etape2 bt-orange" value="<f:translate key='tx_tours_domain_model_tours.pay'/>" />
+                                </div>
+                            </f:then>
+                            <f:else>
+                                <div>
+                                        <input type="submit" name="reservation" id="submit-etape2" class="submit-etape2 bt-orange" value="Réserver" />
+                                </div>
+                            </f:else>
+                        </f:if>
+		</f:form>
+	</div>
+    
+        <div id="module-bancaire">
+    
+            <f:if condition="{error} == 'true'">
+                <f:then>
+                    <p><f:translate key='tx_tours_domain_model_tours.errorConfiguration'/> ==> {error}</p>
+                </f:then>
+                <f:else>
+                    <form id="pay_form" name="pay_form" method="POST" action="https://paiement.systempay.fr/vads-payment/">
+                    </form>
+                </f:else>
+            </f:if>
+        </div>
+</div>
+</f:section>

@@ -1,0 +1,71 @@
+{namespace c=Autocars\Tours\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<div id="detail-travel">
+		<div class="info-travel">
+			<ul>
+				<li><p><span>{tour.daysCount} <f:translate key='tx_tours_domain_model_tours.day'/><f:if condition="{tour.daysCount}>1">s</f:if></span> <small>/ {tour.nightsCount} <f:translate key='tx_tours_domain_model_tours.night'/><f:if condition="{tour.nightsCount}>0">s</f:if></small></p></li>
+				<li>
+					<f:if condition="{tour.nightsCount} > 0">
+						<f:then>
+							<p>
+								<f:translate key='tx_tours_domain_model_tours.from'/> 
+								<f:format.date format="d">{tour.departureTstamp}</f:format.date> 
+								<f:if condition="{f:format.date(date: tour.departureTstamp, format: 'm')} != {f:format.date(date: tour.leaveTstamp, format: 'm')}">
+									<f:then>
+										<span class="month-name"><f:format.date format="%B">{tour.departureTstamp}</f:format.date></span>
+									</f:then>
+								</f:if>
+								<f:translate key='tx_tours_domain_model_tours.to'/> 
+								<f:format.date format="d">{tour.leaveTstamp}</f:format.date> 
+								<span class="month-name"><f:format.date format="%B">{tour.leaveTstamp}</f:format.date></span> 
+								<f:format.date format="Y">{tour.leaveTstamp}</f:format.date>
+							</p>
+						</f:then>
+						<f:else>
+							<p><f:translate key='tx_tours_domain_model_tours.the'/> <f:format.date format="d">{tour.leaveTstamp}</f:format.date> <span class="month-name"><f:format.date format="%B">{tour.leaveTstamp}</f:format.date></span> <f:format.date format="Y">{tour.leaveTstamp}</f:format.date></p>						
+						</f:else>
+					</f:if>
+				</li>
+				<li class="price"><p><f:translate key='tx_tours_domain_model_tours.fromPrice'/> :<br><span>{tour.price} €</span> <small>/ <f:translate key='tx_tours_domain_model_tours.person'/></small><br> <f:if condition="{tour.nightsCount} > 0"><f:translate key='tx_tours_domain_model_tours.doubleroom'/></f:if></p></li>
+			</ul>
+		</div>
+		<div class="slider-travel">
+			<ul class="bxslider">
+				<f:for each="{tour.pictures}" as="picture" iteration="i">
+					<li>
+						<img src="fileadmin{c:sysfileTaker(uid: '{picture.uid}', limit: '1' )}" width="650" height="309" alt="{tour.title}" title="{tour.title}">
+					</li>
+				</f:for>
+			</ul>
+		</div>
+
+		<div class="clear"></div>
+		<script>var pfHeaderImgUrl = '';var pfHeaderTagline = '';var pfdisableClickToDel = 1;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 0;var pfDisableEmail = 1;var pfDisablePrint = 0;var pfCustomCSS = '';var pfBtVersion='1';(function(){var js, pf;pf = document.createElement('script');pf.type = 'text/javascript';if ('https:' === document.location.protocol){js='https://pf-cdn.printfriendly.com/ssl/main.js'}else{js='http://cdn.printfriendly.com/printfriendly.js'}pf.src=js;document.getElementsByTagName('head')[0].appendChild(pf)})();</script>
+		<div class="link-travel">
+			<ul>
+				<!--<li class="active">
+					<a class="link-fav" href="https://www.autocars-imbert.com/fr/exemple-gabarit-voyage-detail.html#">Déjà en favori</a>
+				</li>-->
+				<li>
+					<a href="http://www.printfriendly.com" class="link-print printfriendly" onclick="window.print();return false;" title="<f:translate key='tx_tours_domain_model_tours.printer'/>"><f:translate key='tx_tours_domain_model_tours.printer'/></a>				
+				</li>
+				<!--<li><a class="link-print" href="https://www.autocars-imbert.com/fr/exemple-gabarit-voyage-detail.html#">Imprimer</a></li>-->
+				<li>
+					<a href="http://www.printfriendly.com" class="link-pdf printfriendly" onclick="window.print();return false;" title="<f:translate key='tx_tours_domain_model_tours.exportPdf'/>"><f:translate key='tx_tours_domain_model_tours.exportPdf'/></a>				
+				</li>
+				<li>
+					<a class="link-info" rel="nofollow" href="<f:uri.page pageUid="{demandeInformationPID}" additionalParams="{travel: tour.title}" />"><f:translate key='tx_tours_domain_model_tours.informationRequest'/></a>
+				</li>
+			</ul>		
+		</div>
+		
+		<div class="content-travel">
+			<p><f:format.html>{tour.description}</f:format.html></p>
+		</div>
+	</div>
+</f:section>

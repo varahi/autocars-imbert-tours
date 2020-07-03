@@ -1,0 +1,288 @@
+plugin.Tx_Formhandler.settings.predef.formhandler-basic-ajax-submit {
+
+	# This is the title of the predefined form shown in the dropdown box in the plugin options.
+	name = Etape 2
+	
+	# All form fields are prefixed with this values (e.g. etape2[name])
+	formValuesPrefix = etape2
+
+	langFile.1 = TEXT
+	langFile.1.value = {$formhandlerExamples.basic.ajax-submit.rootPath}/lang/lang.xml
+
+	templateFile = TEXT
+	templateFile.value = {$formhandlerExamples.basic.ajax-submit.rootPath}/html/step-1.html
+
+	# The master template is a file containing the markup for specific field types or other sub templates (e.g. for emails). You can use these predefined markups in your HTML template for a specific form.
+	masterTemplateFile = TEXT
+	masterTemplateFile.value = {$formhandlerExamples.basic.ajax-submit.rootPath}/html/mastertemplate.html
+	
+	# CSS files
+	cssFile {
+		10 = TEXT
+		10.value = {$formhandlerExamples.basic.ajax-submit.rootPath}/skin/css/foundation.min.css
+		10.if.isTrue = {$formhandlerExamples.basic.ajax-submit.includeFoundationCSS}
+		20 = TEXT
+		20.value = {$formhandlerExamples.basic.ajax-submit.rootPath}/skin/css/special.css
+	}
+	
+	# In case an error occurred, all markers ###is_error_[fieldname]### are filled with the configured value of the setting "default".
+	isErrorMarker {
+		default = error
+	}
+	
+	# These wraps define how an error messages looks like. The message itself is set in the lang file.
+	singleErrorTemplate {
+		totalWrap = <small class="error">|</small>
+	}
+	preProcessors {
+		1.class = Tx_Formhandler_PreProcessor_LoadDefaultValues
+			1.config {
+			  
+				1 {
+					#i_will.defaultValue = 580
+					#speakers_reduction.defaultValue = {$speakers_reduction}
+					#totalsum = TEXT
+					#totalsum.defaultValue= 0
+					
+					
+					type-res.defaultValue = TEXT
+					type-res.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|type-res
+					
+					adultes.defaultValue = TEXT
+					adultes.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|adultes
+					
+					enfants.defaultValue = TEXT
+					enfants.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|enfants
+					
+					enfants-de-3.defaultValue = TEXT
+					enfants-de-3.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|enfants-de-3
+					
+					price.defaultValue = TEXT
+					price.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|price	
+
+					from-time.defaultValue = TEXT
+					from-time.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|from-time
+					from-hour.defaultValue = TEXT
+					from-hour.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|from-hour
+					from-city.defaultValue = TEXT
+					from-city.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|from-city
+
+					from-time2.defaultValue = TEXT
+					from-time2.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|from-time2
+					from-hour2.defaultValue = TEXT
+					from-hour2.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|from-hour2
+					from-city2.defaultValue = TEXT
+					from-city2.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|from-city2					
+
+					to-time.defaultValue = TEXT
+					to-time.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|to-time
+					to-hour.defaultValue = TEXT
+					to-hour.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|to-hour
+					to-city.defaultValue = TEXT
+					to-city.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|to-city
+					
+					to-time2.defaultValue = TEXT
+					to-time2.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|to-time2
+					to-hour2.defaultValue = TEXT
+					to-hour2.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|to-hour2
+					to-city2.defaultValue = TEXT
+					to-city2.defaultValue.data = GP:tx_tours_vojage|tx_tours_vojage|to-city2					
+				
+				}
+	 
+			}
+	}
+
+	markers{
+		conditions_link = TEXT
+		conditions_link.value = (lire les conditions générales de vente)
+		conditions_link.typolink.parameter = 42
+	
+		aller_date = TEXT
+		aller_date.data = GP:tx_tours_vojage|tx_tours_vojage|from-time
+					
+		aller_time = TEXT
+		aller_time.data = GP:tx_tours_vojage|tx_tours_vojage|from-hour
+
+		aller_city = TEXT
+		aller_city.data = GP:tx_tours_vojage|tx_tours_vojage|from-city	
+		
+		aller_date2 = TEXT
+		aller_date2.data = GP:tx_tours_vojage|tx_tours_vojage|from-time2
+					
+		aller_time2 = TEXT
+		aller_time2.data = GP:tx_tours_vojage|tx_tours_vojage|from-hour2
+
+		aller_city2 = TEXT
+		aller_city2.data = GP:tx_tours_vojage|tx_tours_vojage|from-city2			
+
+		retour_date = TEXT
+		retour_date.data = GP:tx_tours_vojage|tx_tours_vojage|to-time
+		
+		retour_time = TEXT
+		retour_time.data = GP:tx_tours_vojage|tx_tours_vojage|to-hour
+
+		retour_city = TEXT
+		retour_city.data = GP:tx_tours_vojage|tx_tours_vojage|to-city	
+		
+		retour_date2 = TEXT
+		retour_date2.data = GP:tx_tours_vojage|tx_tours_vojage|to-time2
+		
+		retour_time2 = TEXT
+		retour_time2.data = GP:tx_tours_vojage|tx_tours_vojage|to-hour2
+
+		retour_city2 = TEXT
+		retour_city2.data = GP:tx_tours_vojage|tx_tours_vojage|to-city2		
+
+		tarif = TEXT
+		tarif.data = GP:tx_tours_vojage|tx_tours_vojage|price
+	}
+	
+	# This block defines the error checks performed when the user hits submit.
+	validators {
+		1.class = Validator_Default
+		1.config.fieldConf {
+			nom.errorCheck.1 = required
+			prenom.errorCheck.1 = required
+			tel.errorCheck.1 = required
+			email.errorCheck.1 = required
+			email.errorCheck.2 = email
+			addresse.errorCheck.1 = required
+			cp.errorCheck.1 = required
+			ville.errorCheck.1 = required
+			payment.errorCheck.1 = required
+		}
+	}
+	
+	ajax {
+		class = AjaxHandler_JQuery
+		config {
+			ajaxSubmit = 1
+			ajaxSubmitCallback = afterAjaxSubmit
+		}
+	}
+
+	# Finishers are called after the form was submitted successfully (without errors).
+	finishers {
+
+		# Finisher_Mail sends emails to an admin and/or the user.
+		1.class = Finisher_Mail
+		1.config {
+			checkBinaryCrLf = message
+			admin {
+				templateFile = TEXT
+				templateFile.value = {$formhandlerExamples.basic.ajax-submit.rootPath}/html/email-admin.html
+				sender_email = {$formhandlerExamples.basic.ajax-submit.email.admin.sender_email}
+				to_email = {$formhandlerExamples.basic.ajax-submit.email.admin.to_email}
+				subject = TEXT
+				subject.data = LLL:{$formhandlerExamples.basic.ajax-submit.rootPath}/lang/lang.xml:email_admin_subject
+			}
+			user {
+				templateFile = TEXT
+				templateFile.value = {$formhandlerExamples.basic.ajax-submit.rootPath}/html/email-user.html
+				sender_email = {$formhandlerExamples.basic.ajax-submit.email.admin.sender_email}
+				to_email = email
+				subject = TEXT
+				subject.data = LLL:{$formhandlerExamples.basic.ajax-submit.rootPath}/lang/lang.xml:email_user_subject
+			}
+			
+		}
+		3.class = Finisher_DB
+		3.config {
+			table = tx_tours_domain_model_order
+			key = uid
+			#updateInsteadOfInsert = 1
+			
+			fields {
+				pid.mapping = TEXT
+				pid.mapping {
+					data = TSFE:id
+					insertData = 1
+				}
+				tstamp.special    = sub_tstamp
+				
+				email.mapping     = email
+				nom.mapping = nom
+				prenom.mapping  = prenom
+				phone.mapping   = tel
+				address.mapping   = addresse
+				cp.mapping   = cp
+				ville.mapping   = ville
+				payment.mapping   = payment
+				type_res.mapping   = type-res
+				adultes.mapping   = adultes
+				enfants.mapping   = enfants
+				
+				from_time.mapping   = from-time
+				from_hour.mapping   = from-hour
+				from_city.mapping   = from-city
+
+				from_time2.mapping   = to-time
+				from_hour2.mapping   = to-hour
+				from_city2.mapping   = to-city
+				
+				price.mapping   = price
+
+			}
+		}
+		# Finisher_Redirect will redirect the user to another page after the form was submitted successfully.
+		5.class = Finisher_Redirect
+		5.config {
+			redirectPage = {$formhandlerExamples.basic.ajax-submit.redirectPage}
+		}
+	}
+
+}
+
+[globalVar = GP:etape2|adultes > 0]
+plugin.Tx_Formhandler.settings.predef.formhandler-basic-ajax-submit {
+	markers{
+		aller_date = TEXT
+		aller_date.data = GP:etape2|from-time
+		aller_time = TEXT
+		aller_time.data = GP:etape2|from-hour
+		aller_city = TEXT
+		aller_city.data = GP:etape2|from-city	
+		
+		aller_date2 = TEXT
+		aller_date2.data = GP:etape2|from-time2
+		aller_time2 = TEXT
+		aller_time2.data = GP:etape2|from-hour2
+		aller_city2 = TEXT
+		aller_city2.data = GP:etape2|from-city2			
+
+		retour_date = TEXT
+		retour_date.data = GP:etape2|to-time
+		retour_time = TEXT
+		retour_time.data = GP:etape2|to-hour
+		retour_city = TEXT
+		retour_city.data = GP:etape2|to-city	
+		
+		retour_date2 = TEXT
+		retour_date2.data = GP:etape2|to-time2
+		retour_time2 = TEXT
+		retour_time2.data = GP:etape2|to-hour2
+		retour_city2 = TEXT
+		retour_city2.data = GP:etape2|to-city2		
+
+		tarif = TEXT
+		tarif.data = GP:etape2|price
+	}
+}
+[global]
+
+[globalVar = GP:tx_tours_vojage|tx_tours_vojage|type-res = aller-simple]
+plugin.Tx_Formhandler.settings.predef.formhandler-basic-ajax-submit {
+	markers{
+		hidden = TEXT
+		hidden.value = style="display:none;"
+	}
+}	
+[else]
+plugin.Tx_Formhandler.settings.predef.formhandler-basic-ajax-submit {
+	markers{
+		hidden = TEXT
+		hidden.value =
+	}
+}
+[global]

@@ -1,0 +1,30 @@
+{namespace c=Autocars\Tours\ViewHelpers}
+{namespace h=Helhum\TyposcriptRendering\ViewHelpers}
+
+<f:layout name="Default" />
+<f:section name="main">
+<f:form id="reservation-form" pageUid="{nextStepPID}" method="POST" name="reservation-form" action="firstReservationStep" controller="Vojage" onclick="updateHidden();" >
+
+	<f:render partial="Vojage/List/HiddenFields" />
+	<f:render partial="Vojage/List/FromLocations" arguments="{_all}"/>
+
+	<div class="radio-grp input-second">
+		<f:render partial="Vojage/List/DestinationLabel" arguments="{_all}" />
+		<f:render partial="Vojage/List/ToLocations" arguments="{_all}"/>
+		
+		<f:comment><div id="ajax-container"> <!-- The destination cities will be updated by ajax responce --></div></f:comment>
+	</div>
+	
+	<f:render partial="Vojage/List/ToTheNextStep" arguments="{_all}" />
+	
+	<f:form.hidden name="event" value="1" />
+
+</f:form>
+
+<!-- This template is related with js file 'vojage-list' -->
+<script type="text/javascript">
+	var _url = '<h:uri.ajaxAction controller="Vojage" action="findDestinations" />';
+</script>
+
+</f:section>
+

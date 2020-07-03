@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-11-05T23:01:44Z" product-name="tours">
+		<header/>
+		<body>
+			<trans-unit id="tx_tours_domain_model_tour">
+				<source>Tour</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_tour.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_tour.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_tour.days_count">
+				<source>Days Count</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_tour.nights_count">
+				<source>Nights Count</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_tour.departure_tstamp">
+				<source>Departure Tstamp</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_tour.leave_tstamp">
+				<source>Leave Tstamp</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_tour.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_tour.pictures">
+				<source>Pictures</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_arrivallocation">
+				<source>Departure Location</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_arrivallocation.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_arrivallocation.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_arrivallocation.area">
+				<source>Area ( city place ) </source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_city.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_area">
+				<source>Area ( city place )</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_area.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_destinationlocation">
+				<source>Destination Location</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_destinationlocation.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_destinationlocation.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_destinationlocation.area">
+				<source>Area ( city place )</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_vojage">
+				<source>Voyage</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_vojage.departure_date">
+				<source>Departure Date</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_vojage.arrival_date">
+				<source>To Date</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_vojage.from_location">
+				<source>From Location</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_vojage.to_location">
+				<source>To Location</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_vojage.child_price">
+				<source>Child Price</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_vojage.adult_price">
+				<source>Adult Price</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_vojage.places_max">
+				<source>Places max</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_vojage.places_reservees">
+				<source>Places réservées</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_childprice">
+				<source>Child Price</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_childprice.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_adultprice">
+				<source>Adult Price</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_adultprice.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders">
+				<source>Orders</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.from_id">
+				<source>From id</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.from_time">
+				<source>From time</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.from_hour">
+				<source>From hour</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.from_option">
+				<source>From option</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.from_time2">
+				<source>From time 2</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.from_hour2">
+				<source>From hour 2</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.from_city2">
+				<source>From city 2</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.from_option2">
+				<source>From option 2</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.to_id">
+				<source>to id</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.to_time">
+				<source>to time</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.to_hour">
+				<source>To hour</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.to_city">
+				<source>To city</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.to_option">
+				<source>To option</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.to_time2">
+				<source>To time 2</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.to_hour2">
+				<source>To hour 2</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.to_city2">
+				<source>To city 2</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.to_option2">
+				<source>To option 2</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.nb_adult">
+				<source>Nb adult</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.nb_children">
+				<source>Nb children</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.nb_baby">
+				<source>Nb Baby</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.status">
+				<source>Payé</source>
+			</trans-unit>
+			<trans-unit id="tx_tours_domain_model_orders.id_users">
+				<source>Customer</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

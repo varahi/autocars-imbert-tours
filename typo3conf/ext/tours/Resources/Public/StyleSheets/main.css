@@ -1,0 +1,7 @@
+.ui-state-disabled {
+    display: none;
+}
+
+.ui-datepicker-unselectable {
+	background-color: #12345e !important;
+}

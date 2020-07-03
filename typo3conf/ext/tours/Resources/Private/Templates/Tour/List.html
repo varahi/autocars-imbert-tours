@@ -1,0 +1,37 @@
+{namespace c=Autocars\Tours\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="main">
+<div id="list-travel">
+	<f:for each="{tours}" as="tour" iteration="">
+		<div class="travel">
+
+			<div class="image">
+				<f:link.action action="show" controller="Tour" arguments="{tour: '{tour}' }"  pageUid="{detailPageUid}" title="{tour.title}">
+					<img src="fileadmin{c:sysfileTaker(uid: '{tour.pictures.0.uid}', limit: '1' )}" width="68" height="71" alt="{tour.title}" title="{tour.title}">
+				</f:link.action>
+			</div>
+
+			<div class="title">
+				<h2>{tour.title}</h2>
+			</div>
+
+			<div class="info">
+				<p></p>
+				<p><f:translate key='tx_tours_domain_model_tours.from'/> <f:format.date format="d">{tour.departureTstamp}</f:format.date>
+					<f:translate key='tx_tours_domain_model_tours.to'/> <f:format.date format="d">{tour.leaveTstamp}</f:format.date> <span class="month-name"><f:format.date format="%B">{tour.leaveTstamp}</f:format.date></span>
+					<f:format.date format="Y">{tour.departureTstamp}</f:format.date></p>
+				<p><small><f:translate key='tx_tours_domain_model_tours.fromPrice'/></small> <span>{tour.price} €</span> / pers.
+				</p>
+			</div>
+
+
+			<div class="more">
+				<f:link.action action="show" controller="Tour" arguments="{tour: '{tour}' }"  pageUid="{detailPageUid}" class="bt-more" title="{tour.title}"><f:translate key='tx_tours_domain_model_tours.showDestination'/></f:link.action>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</f:for>	
+</div>
+</f:section>

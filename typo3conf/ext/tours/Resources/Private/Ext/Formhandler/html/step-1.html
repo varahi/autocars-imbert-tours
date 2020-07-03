@@ -1,0 +1,92 @@
+<!-- ###TEMPLATE_FORM1### -->
+<div id="booking">
+<!--
+	<div class="bt-back">
+		<a href="#">Modifier mon transport</a>
+	</div>
+-->
+###master_multipart-form-start_booking-step2###
+	###master_section-start###
+		###master_hiddeninput_type-res###
+		###master_hiddeninput_adultes###
+		###master_hiddeninput_enfants###
+		###master_hiddeninput_enfants-de-3###
+		
+		###master_hiddeninput_from-time###
+		###master_hiddeninput_from-hour###
+		###master_hiddeninput_from-city###
+		
+		###master_hiddeninput_from-time2###
+		###master_hiddeninput_from-hour2###
+		###master_hiddeninput_from-city2###		
+
+		###master_hiddeninput_to-time###
+		###master_hiddeninput_to-hour###
+		###master_hiddeninput_to-city###
+		
+		###master_hiddeninput_to-time2###
+		###master_hiddeninput_to-hour2###
+		###master_hiddeninput_to-city2###		
+
+		###master_hiddeninput_price###		
+		<legend>Mon transport</legend>
+		<div>
+			<div class="recap-transport">
+				<div class="content-recap">
+					<p class="title"><span>Aller</span></p>
+					<p>Le <span class="txt-orange">###aller_date###</span> de <span class="txt-orange">###aller_city###</span> - <span class="txt-orange">###aller_time###</span> à <span class="txt-orange">###aller_city2###</span> - <span class="txt-orange">###aller_time2###</span></p>
+				</div>
+			</div>
+			<div class="recap-transport" ###hidden###>
+				<div class="content-recap">
+					<p class="title"><span>Retour</span></p>
+					<p>Le <span class="txt-orange">###retour_date###</span> de <span class="txt-orange">###retour_city###</span> - <span class="txt-orange">###retour_time###</span> à <span class="txt-orange">###retour_city2###</span> - <span class="txt-orange">###retour_time2###</span></p>
+				</div>
+			</div>
+			<div class="recap-transport">
+				<div class="content-recap bg-orange">
+					<p class="title"><span>Tarif de mon transport</span></p>
+					<p class="bg-white"><span>###tarif### €</span></p>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div> 
+	###master_section-end###
+	###master_section-start###
+		<legend>Mes coordonnées</legend>
+		  <div class="input-two">
+			###master_input_nom###
+			###master_input_prenom###
+		  </div>
+		  <div class="input-two">
+			###master_input_email###
+			###master_input_tel###		  
+		  </div>
+			###master_input_addresse###
+		  <div class="input-two">
+			###master_input_cp###
+			###master_input_ville###
+		  </div>
+	###master_section-end###
+  
+	<fieldset class="fieldset-white">
+		###master_checkbox_cdg###
+		<label>J'ai lu les conditions générales et j'y adhère sans réserve ###conditions_link###.</label>
+		###error_cdg###
+	</fieldset>
+ 
+	<fieldset class="fieldset-station">
+		<legend>Mode de paiement</legend>
+		<div class="payment-list">
+			###master_payment###
+			<p><small>Paiement 100% sécurisé</small></p>
+		</div>
+	</fieldset> 
+
+	<div class="hidden" style="display:none;">###master_ajax-submit###</div>
+	
+###master_form-end###
+</div>
+<!-- ###TEMPLATE_FORM1### -->
+
+

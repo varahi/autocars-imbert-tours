@@ -1,0 +1,34 @@
+<!-- Represents how many places for children and adults should be booked --> 
+<fieldset class="fieldset-person">
+	<f:if condition="{event} == 1">
+		<f:then>
+			<div class="input-two">
+				<div>
+					<label for="nb-adu"><f:translate key='tx_tours_domain_model_tours.numberTravelers'/></label>
+					<input type="number" id="nb-adu" name="tx_tours_vojage[tx_tours_vojage][adultes]" min="0"/>
+					<input type="hidden" id="nb-enf" name="tx_tours_vojage[tx_tours_vojage][enfants]" value="0">
+					<input type="hidden" id="enfants-de-3" name="tx_tours_vojage[tx_tours_vojage][enfants-de-3]" value="0">
+				</div>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="input-two">
+				<div>
+					<label for="nb-adu"><f:translate key='tx_tours_domain_model_tours.numberAdult'/></label>
+					<input type="number" id="nb-adu" name="tx_tours_vojage[tx_tours_vojage][adultes]" min="0"/>
+				</div>
+				<div>
+					<label for="nb-enf"><f:translate key='tx_tours_domain_model_tours.numberChildren'/></label>
+					<input type="number" id="nb-enf" name="tx_tours_vojage[tx_tours_vojage][enfants]" min="0"/>
+				</div>
+				<div>
+					<label for="enfants-de-3">
+						<f:translate key='tx_tours_domain_model_tours.childrenFree'/>
+						<small style="color:#0f4a71;"><f:translate key='tx_tours_domain_model_tours.obligatoryRegister'/></small>
+					</label>
+					<input type="number" id="enfants-de-3" name="tx_tours_vojage[tx_tours_vojage][enfants-de-3]" min="0"/>
+				</div>
+			</div>
+		</f:else>
+	</f:if>
+</fieldset>

@@ -1,0 +1,15 @@
+{namespace c=Autocars\Tours\ViewHelpers}
+
+<f:layout name="Menu" />
+
+<f:section name="main">
+	<ul>
+		<f:for each="{tours}" as="tour">
+			<li>
+				<f:link.action action="show" controller="Tour" arguments="{tour: '{tour}' }"  pageUid="{settings.detailPid}" title="{tour.title}">
+					{tour.title}
+				</f:link.action>
+			</li>
+		</f:for>
+	</ul>
+</f:section>

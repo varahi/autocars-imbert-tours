@@ -1,0 +1,174 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    182,
+                    4
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": []
+                },
+                "name": "Tour",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": true,
+                    "type": "Entity",
+                    "uid": "892039853497"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": true,
+                            "propertyName": "title",
+                            "propertyType": "String",
+                            "uid": "317255961020"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "description",
+                            "propertyType": "RichText",
+                            "uid": "1025389468521"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "daysCount",
+                            "propertyType": "String",
+                            "uid": "935679279687"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "nightsCount",
+                            "propertyType": "String",
+                            "uid": "1425396624840"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "departureTstamp",
+                            "propertyType": "Date",
+                            "uid": "1252407884334"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "99",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "leaveTstamp",
+                            "propertyType": "Date",
+                            "uid": "904704756225"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "price",
+                            "propertyType": "String",
+                            "uid": "217122772336"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "99",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "pictures",
+                            "propertyType": "Image",
+                            "uid": "896066905644"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [],
+        "description": "",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "beta",
+            "targetVersion": "6.2",
+            "version": "1.0.0"
+        },
+        "extensionKey": "tours",
+        "name": "Autocars Tours",
+        "originalExtensionKey": "autocars_tours",
+        "persons": [
+            {
+                "company": "Nazomi",
+                "email": "sergey.borulko@nazomi.com",
+                "name": "Sergey Borulko",
+                "role": "Developer"
+            },
+            {
+                "company": "",
+                "email": "gvv100@gmail.com",
+                "name": "Vadym Girkalo",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "",
+                    "noncacheableActions": "",
+                    "switchableActions": " list\nTour->list;\ndetail\nTour->show;"
+                },
+                "key": "ToursList",
+                "name": "Tours List"
+            }
+        ],
+        "vendorName": "Autocars"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2015-11-05 11:01",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (5)"
+    }
+}

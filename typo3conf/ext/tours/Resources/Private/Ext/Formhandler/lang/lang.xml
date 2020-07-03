@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Language labels for Contact Form</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="label_fieldset">Contact Form</label>
+			<label index="nom">Nom</label>
+			<label index="prenom">Prénom</label>
+			<label index="tel">Téléphone</label>
+			<label index="tel_placeholder">00 00 00 00 00</label>
+			<label index="email">Email</label>
+			<label index="email_placeholder">contact@mail.com</label>
+			<label index="addresse">Adresse</label>
+			<label index="cp">CP</label>
+			<label index="ville">Ville</label>
+			<label index="cdg">J'ai lu les conditions générales et j'y adhère sans réserve</label>
+			
+			<label index="type-res">Aller / retour</label>
+			<label index="adultes">Nombre d’adultes</label>
+			<label index="enfants">Nombre d'enfants</label>
+			<label index="enfants-de-3">Nombre d'enfants de moins de 3 ans</label>
+			<label index="price">Tarif</label>
+
+			<label index="from-time">Date</label>
+			<label index="from-hour">Time</label>
+			<label index="from-city">City</label>
+			<label index="from-time2">Date</label>
+			<label index="from-hour2">Time</label>
+			<label index="from-city2">City</label>			
+
+			<label index="to-time">Retour date</label>
+			<label index="to-hour">Retour time</label>
+			<label index="to-city">Retour city</label>
+			<label index="to-time2">Retour date</label>
+			<label index="to-hour2">Retour time</label>
+			<label index="to-city2">Retour city</label>
+			
+			<label index="payment">Payment</label>
+			<label index="payment.cb">CB</label>
+			<label index="payment.mc">MASTERCARD</label>
+			<label index="payment.visa">VISA</label>
+			<label index="payment.paypal">PAYPAL</label>
+			
+			<label index="receive-copy">I want to receive a copy of this request</label>
+			<label index="submit">Send</label>
+	
+			<label index="error_nom_required">Please enter your nom!</label>
+			<label index="error_email_required">Please enter your email address!</label>
+			<label index="error_email_email">Please enter a valid email address!</label>
+			<label index="error_prenom_required">Please enter a prenom!</label>
+			<label index="error_payment_required">Please select a payment!</label>
+			<label index="error_tel_required">Please enter a tel!</label>
+			<label index="error_addresse_required">Please enter an addresse!</label>
+			<label index="error_cp_required">Please enter a CP!</label>
+			<label index="error_ville_required">Please enter a ville!</label>
+			
+			<label index="greetings">Dear</label>
+			<label index="email_user_subject">Your contact request</label>
+			<label index="email_user_text">We have received your request via the contact form on www.domain.com. We will process your request and get in contact with you soon.</label>
+			<label index="email_user_footer">---------------------------------- This message was created automatically. --------------------------------</label>
+
+			<label index="email_admin_subject">Contact request</label>
+			<label index="email_admin_text">A user filled out the contact form on www.domain.com</label>
+			<label index="email_admin_footer">---------------------------------- This message was created automatically. --------------------------------</label>
+			
+		</languageKey>
+	</data>
+</T3locallang>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-11-10T18:28:55Z" product-name="tours">
+		<header/>
+		<body>
+			<trans-unit id="departure_date.description">
+				<source>arrivalDate</source>
+			</trans-unit>
+			<trans-unit id="arrival_date.description">
+				<source>departureDate</source>
+			</trans-unit>
+			<trans-unit id="from_location.description">
+				<source>fromLocation</source>
+			</trans-unit>
+			<trans-unit id="to_location.description">
+				<source>toLocation</source>
+			</trans-unit>
+			<trans-unit id="child_price.description">
+				<source>childPrice</source>
+			</trans-unit>
+			<trans-unit id="adult_price.description">
+				<source>adultPrice</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

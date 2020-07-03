@@ -1,0 +1,13 @@
+<!-- Represents the price of the ticket and button to the next step of the reservation -->
+<fieldset class="fieldset-white">
+	<legend><f:translate key='tx_tours_domain_model_tours.tarifTransport'/></legend>
+
+	<!-- By defaul is '0'. Updates everytime when children count or adults count changes.  Updates when calendar event has been changed as well -->
+	<div class="bg-orange price-result">
+		<div><input id="tx_tours_vojage_price" name="tx_tours_vojage[tx_tours_vojage][price]" type="text" readonly="readonly" value="0" >€</div>
+	</div>
+	
+	<div id="toTheSecondStep" class="input-submit"> <!-- The button connected with click event, more detail in 'firstStep.js'  -->
+		<button type="submit"><span class="bt-bordure-bleu"><f:translate key='tx_tours_domain_model_tours.book'/></span></button>
+	</div>
+</fieldset>

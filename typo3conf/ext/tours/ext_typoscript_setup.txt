@@ -1,0 +1,21 @@
+
+config.tx_extbase{
+    persistence{
+        classes{
+
+            TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
+                subclasses {
+                    Tx_Tours_Users = Autocars\Tours\Domain\Model\Users
+					
+          		}
+            }
+            Autocars\Tours\Domain\Model\Users {
+                mapping {
+                    tableName = fe_users
+                    recordType = Tx_Tours_Users
+                }
+            }
+            
+    	}
+    }
+}

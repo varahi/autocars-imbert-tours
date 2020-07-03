@@ -1,0 +1,46 @@
+
+plugin.tx_tours {
+	view {
+		templateRootPath = {$plugin.tx_tours.view.templateRootPath}
+		partialRootPath = {$plugin.tx_tours.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_tours.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_tours.persistence.storagePid}
+	}
+	settings{
+		detailPid = {$plugin.tx_tours.settings.detailPid}
+		redirectPid = {$plugin.tx_tours.settings.redirectPid}
+	}
+}
+
+#page.includeJS { 
+#	underscore   = EXT:tours/Resources/Public/JavaScripts/us-1-8-3.min.js
+#	datesBuilder = EXT:tours/Resources/Public/JavaScripts/datesBuilder.js
+#	v-list       = EXT:tours/Resources/Public/JavaScripts/vojage-list.js
+#	priceCalc    = EXT:tours/Resources/Public/JavaScripts/step1-priceCanculation.js
+#	backCalendar = EXT:tours/Resources/Public/JavaScripts/backwayCalendar.js
+#	step2        = EXT:tours/Resources/Public/JavaScripts/step2.js
+#}
+
+
+lib.tours = USER
+lib.tours {
+	userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+	extensionName = Tours
+	pluginName = Tourslist
+	vendorName = Autocars
+
+	switchableControllerActions {
+        Tour {
+			1 = genMenu
+        }
+	}
+}
+
+#page.includeCSS {
+#	200 = EXT:tours/Resources/Public/Css/custom.css
+#	200.media = all
+#}
+
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:tours/Configuration/TypoScript/Ext/Formhandler/" extensions="txt">

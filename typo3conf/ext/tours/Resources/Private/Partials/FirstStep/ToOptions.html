@@ -1,0 +1,15 @@
+ <!-- Builds the 'to' location option list -->
+<span class="span-select"><f:translate key='tx_tours_domain_model_tours.at'/></span>
+
+<div class="input-select">
+  <select class="{class}" name="{class}_to_location">
+    <f:for each="{vojages}" as="vojage" iteration="i">
+      <f:if condition="{i.isFirst}"><f:then>
+        <option disabled="disabled" class="{class}_departure-option {class}_departure-option-default" data-uid="-1" data-time="" data-adult-price="0" data-child-price="0" selected="selected"> ---- </option>
+      </f:then></f:if>
+
+  		<option disabled="disabled" class="{class}_departure-option" name="{vojage.to}" data-city="{vojage.to}" data-uid="{vojage.uid}" data-time="{f:format.date(format : 'm/d/Y', date : '{vojage.departure_date}')}" data-adult-price="{vojage.adult_price}" data-child-price="{vojage.child_price}" >{vojage.to} - <f:format.date format="H:i">{vojage.departure_date}</f:format.date> </option>
+
+    </f:for>
+  </select>
+</div>

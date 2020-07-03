@@ -1,0 +1,72 @@
+{namespace c=Autocars\Tours\ViewHelpers}
+{namespace h=Helhum\TyposcriptRendering\ViewHelpers}
+
+<f:layout name="Default" />
+<f:section name="main">
+
+    <f:form action="updateVojage"
+            name="voyage"
+            object="{voyage}"
+            controller="Voyage"
+            arguments="{voyage: voyage}"
+            pageUid="82"
+            extensionName="Tours"
+            pluginName="Vojage">
+
+        <table class="tx_tours-edit">
+            <tr>
+                <th>Places réservées</th>
+                <th>Date de départ</th>
+                <th>Ville de départ</th>
+                <th>Heure de départ</th>
+                <th>Date d'arrivée</th>
+                <th>Ville d'arrivée</th>
+                <th>Heure d'arrivée</th>
+            </tr>
+
+            <tr>
+                <td><p><f:form.textfield class="edit-input" name="voyage.totalPlacesReservees" property="totalPlacesReservees" /></p></td>
+                <td>
+                    <p><f:form.textfield type="date" property="departureDate" value="{f:format.date(format: 'Y-m-d', date: '{voyage.departureDate}')}" /></p>
+                </td>
+                <td>
+                    <p>
+                        <f:comment>
+                            <f:form.textfield name="zoneDepart" property="zoneDepart" />
+                        </f:comment>
+                        <f:form.select
+                                class="edit-select"
+                                property="zoneDepart"
+                                options="{tabZone}"
+                                optionLabelField="zoneDepart"
+                                optionValueField="zoneDepart" />
+                    </p>
+                </td>
+                <td>
+                    <p><f:form.textfield class="edit-input" property="departureDate" value="{f:format.date(format: 'H:i', date: '{voyage.departureDate}')}" /></p>
+                </td>
+                <td>
+                    <p>
+                        <f:form.textfield type="date" property="arrivalDate" value="{f:format.date(format: 'Y-m-d', date: '{voyage.arrivalDate}')}" />
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        <f:form.select
+                                class="edit-select"
+                                property="zoneArrivee"
+                                options="{tabZone}"
+                                optionLabelField="zoneDepart"
+                                optionValueField="zoneArrivee" />
+                    </p>
+                </td>
+                <td><p><f:form.textfield class="edit-input" property="arrivalDate" value="{f:format.date(format: 'H:i', date: '{voyage.arrivalDate}')}" /></p></td>
+            </tr>
+
+        </table>
+
+        <f:form.submit value="{f:translate(id:'tx_tours.submit')}" class="button-submitbtn" />
+    </f:form>
+
+
+</f:section>

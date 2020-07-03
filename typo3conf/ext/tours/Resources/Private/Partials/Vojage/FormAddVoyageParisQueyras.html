@@ -1,0 +1,598 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:form id="form-add-voyage-paris" class="form-add-voyage form-booking" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="create">
+	<fieldset class="fieldset-aller">
+		<f:form.hidden name="fromLocation" value="5" />
+		<f:form.hidden name="toLocation" value="13" />
+		<div class="list-datepicker">
+		
+			<div class="block-add-voyage">
+				<p class="title">Paris</p>
+				<div class="block-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="fromDate" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="fromHour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="fromMinute" options="{minutes}" />
+						</div>
+						<span>min</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="block-add-voyage">
+				<p class="title">Serre Chevalier - Monétier</p>
+				<div class="block-datepicker add-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="monetierDate" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="monetierHour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="monetierMinute" options="{minutes}" />
+						</div>
+						<span>min </span>
+					</div>
+					<div class="input-label">
+						<label>Tarif enfant</label>
+						<div class="input-select">
+							<f:form.select name="monetierChildPrice" options="{childPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+					<div class="input-label">
+						<label>Tarif adulte</label>
+						<div class="input-select">
+							<f:form.select name="monetierAdultPrice" options="{adultPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="block-add-voyage">
+				<p class="title">Serre Chevalier - Villeneuve</p>
+				<div class="block-datepicker add-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="villeneuveDate" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="villeneuveHour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="villeneuveMinute" options="{minutes}" />
+						</div>
+						<span>min </span>
+					</div>
+					<div class="input-label">
+						<label>Tarif enfant</label>
+						<div class="input-select">
+							<f:form.select name="villeneuveChildPrice" options="{childPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+					<div class="input-label">
+						<label>Tarif adulte</label>
+						<div class="input-select">
+							<f:form.select name="villeneuveAdultPrice" options="{adultPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="block-add-voyage">
+				<p class="title">Serre Chevalier - Chantemerle</p>
+				<div class="block-datepicker add-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="chantemerleDate" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="chantemerleHour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="chantemerleMinute" options="{minutes}" />
+						</div>
+						<span>min </span>
+					</div>
+					<div class="input-label">
+						<label>Tarif enfant</label>
+						<div class="input-select">
+							<f:form.select name="chantemerleChildPrice" options="{childPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+					<div class="input-label">
+						<label>Tarif adulte</label>
+						<div class="input-select">
+							<f:form.select name="chantemerleAdultPrice" options="{adultPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="block-add-voyage">
+				<p class="title">Serre Chevalier - Briançon</p>
+				<div class="block-datepicker add-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="brianconDate" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="brianconHour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="brianconMinute" options="{minutes}" />
+						</div>
+						<span>min </span>
+					</div>
+					<div class="input-label">
+						<label>Tarif enfant</label>
+						<div class="input-select">
+							<f:form.select name="brianconChildPrice" options="{childPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+					<div class="input-label">
+						<label>Tarif adulte</label>
+						<div class="input-select">
+							<f:form.select name="brianconAdultPrice" options="{adultPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="block-add-voyage">
+				<p class="title">Montgenèvre</p>
+				<div class="block-datepicker add-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="montgenevreDate" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="montgenevreHour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="montgenevreMinute" options="{minutes}" />
+						</div>
+						<span>min </span>
+					</div>
+					<div class="input-label">
+						<label>Tarif enfant</label>
+						<div class="input-select">
+							<f:form.select name="montgenevreChildPrice" options="{childPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+					<div class="input-label">
+						<label>Tarif adulte</label>
+						<div class="input-select">
+							<f:form.select name="montgenevreAdultPrice" options="{adultPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="block-add-voyage">
+				<p class="title">L'Argentière la Bessée</p>
+				<div class="block-datepicker add-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="argentiereDate" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="argentiereHour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="argentiereMinute" options="{minutes}" />
+						</div>
+						<span>min </span>
+					</div>
+					<div class="input-label">
+						<label>Tarif enfant</label>
+						<div class="input-select">
+							<f:form.select name="argentiereChildPrice" options="{childPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+					<div class="input-label">
+						<label>Tarif adulte</label>
+						<div class="input-select">
+							<f:form.select name="argentiereAdultPrice" options="{adultPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="block-add-voyage">
+				<p class="title">Puy Saint Vincent</p>
+				<div class="block-datepicker add-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="puyDate" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="puyHour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="puyMinute" options="{minutes}" />
+						</div>
+						<span>min </span>
+					</div>
+					<div class="input-label">
+						<label>Tarif enfant</label>
+						<div class="input-select">
+							<f:form.select name="puyChildPrice" options="{childPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+					<div class="input-label">
+						<label>Tarif adulte</label>
+						<div class="input-select">
+							<f:form.select name="puyAdultPrice" options="{adultPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="block-add-voyage">
+				<p class="title">Guillestre</p>
+				<div class="block-datepicker add-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="guillestreDate" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="guillestreHour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="guillestreMinute" options="{minutes}" />
+						</div>
+						<span>min </span>
+					</div>
+					<div class="input-label">
+						<label>Tarif enfant</label>
+						<div class="input-select">
+							<f:form.select name="guillestreChildPrice" options="{childPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+					<div class="input-label">
+						<label>Tarif adulte</label>
+						<div class="input-select">
+							<f:form.select name="guillestreAdultPrice" options="{adultPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="block-add-voyage">
+				<p class="title">Vars/Risoul</p>
+				<div class="block-datepicker add-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="varsDate" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="varsHour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="varsMinute" options="{minutes}" />
+						</div>
+						<span>min </span>
+					</div>
+					<div class="input-label">
+						<label>Tarif enfant</label>
+						<div class="input-select">
+							<f:form.select name="varsChildPrice" options="{childPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+					<div class="input-label">
+						<label>Tarif adulte</label>
+						<div class="input-select">
+							<f:form.select name="varsAdultPrice" options="{adultPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="block-add-voyage">
+				<p class="title">Embrun</p>
+				<div class="block-datepicker add-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="embrunDate" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="embrunHour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="embrunMinute" options="{minutes}" />
+						</div>
+						<span>min </span>
+					</div>
+					<div class="input-label">
+						<label>Tarif enfant</label>
+						<div class="input-select">
+							<f:form.select name="embrunChildPrice" options="{childPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+					<div class="input-label">
+						<label>Tarif adulte</label>
+						<div class="input-select">
+							<f:form.select name="embrunAdultPrice" options="{adultPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="block-add-voyage">
+				<p class="title">Le Queyras (Ristolas - Abries - Aiguilles - St Véran - Molines - Ville vieille)</p>
+				<div class="block-datepicker add-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="queyrasDate" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="queyrasHour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="queyrasMinute" options="{minutes}" />
+						</div>
+						<span>min </span>
+					</div>
+					<div class="input-label">
+						<label>Tarif enfant</label>
+						<div class="input-select">
+							<f:form.select name="queyrasChildPrice" options="{childPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+					<div class="input-label">
+						<label>Tarif adulte</label>
+						<div class="input-select">
+							<f:form.select name="queyrasAdultPrice" options="{adultPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="block-add-voyage">
+				<p class="title">Le Queyras (Arvieux - Ceillac)</p>
+				<div class="block-datepicker add-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="queyras2Date" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="queyras2Hour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="queyras2Minute" options="{minutes}" />
+						</div>
+						<span>min </span>
+					</div>
+					<div class="input-label">
+						<label>Tarif enfant</label>
+						<div class="input-select">
+							<f:form.select name="queyras2ChildPrice" options="{childPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+					<div class="input-label">
+						<label>Tarif adulte</label>
+						<div class="input-select">
+							<f:form.select name="queyras2AdultPrice" options="{adultPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="block-add-voyage">
+				<p class="title">Crévoux</p>
+				<div class="block-datepicker add-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="crevouxDate" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="crevouxHour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="crevouxMinute" options="{minutes}" />
+						</div>
+						<span>min </span>
+					</div>
+					<div class="input-label">
+						<label>Tarif enfant</label>
+						<div class="input-select">
+							<f:form.select name="crevouxChildPrice" options="{childPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+					<div class="input-label">
+						<label>Tarif adulte</label>
+						<div class="input-select">
+							<f:form.select name="crevouxAdultPrice" options="{adultPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="block-add-voyage">
+				<p class="title">Les Orres</p>
+				<div class="block-datepicker add-datepicker">
+				
+				</div>
+				<div class="info-datepicker">
+					<p>
+						<f:translate key='tx_tours_domain_model_tours.the'/> 
+						<span class="text-datepicker"></span>
+					</p>
+					<f:form.hidden name="lesOrresDate" value="" />
+					<div class="input-date">
+						<span>à </span>
+						<div class="input-select">
+							<f:form.select name="lesOrresHour" options="{hours}" />
+						</div>
+						<span>h </span>
+						<div class="input-select">
+							<f:form.select name="lesOrresMinute" options="{minutes}" />
+						</div>
+						<span>min </span>
+					</div>
+					<div class="input-label">
+						<label>Tarif enfant</label>
+						<div class="input-select">
+							<f:form.select name="lesOrresChildPrice" options="{childPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+					<div class="input-label">
+						<label>Tarif adulte</label>
+						<div class="input-select">
+							<f:form.select name="lesOrresAdultPrice" options="{adultPrices}" optionValueField="uid" optionLabelField="price" />
+						</div>
+						<span>€</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<button type="submit"><span class="bt-bordure-bleu">Ajouter</span></button>
+		</div>
+	</fieldset>
+</f:form>

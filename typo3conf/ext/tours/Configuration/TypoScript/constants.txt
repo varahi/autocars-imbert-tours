@@ -1,0 +1,51 @@
+
+plugin.tx_tours {
+	view {
+		# cat=plugin.tx_tours/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:tours/Resources/Private/Templates/
+		# cat=plugin.tx_tours/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:tours/Resources/Private/Partials/
+		# cat=plugin.tx_tours/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:tours/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_tours//a; type=string; label=Default storage PID
+		storagePid = 55
+	}
+	settings{
+		detailPid = 44
+		redirectPid = 16
+	}
+}
+
+formhandlerExamples.basic.ajax-submit {
+
+	# cat=Formhandler Examples - Basic - AJAX Submit/basic/10; type=string; label=Root path: Path where the example was saved to.
+	rootPath = typo3conf/ext/tours/Resources/Private/Ext/Formhandler
+	
+	email {
+
+		user {
+
+			# cat=Formhandler Examples - Basic - AJAX Submit/basic/20; type=string; label=User email sender: Email address to use as sender address for the user email.
+			sender_email = 
+
+		}
+
+		admin {
+
+			# cat=Formhandler Examples - Basic - AJAX Submit/basic/20; type=string; label=Admin email sender: Email address to use as sender address for the admin email.
+			sender_email = 
+
+			# cat=Formhandler Examples - Basic - AJAX Submit/basic/20; type=string; label=Admin email recipient: Email address of an admin to receive the contact request.
+			to_email = 
+		}
+	}
+
+	# cat=Formhandler Examples - Basic - AJAX Submit/basic/40; type=string; label=Redirect Page: Page ID to redirect after successful form submission.
+	redirectPage = 
+
+	
+	includeFoundationCSS = 0
+	
+}

@@ -1,0 +1,64 @@
+{namespace c=Autocars\Tours\ViewHelpers}
+{namespace h=Helhum\TyposcriptRendering\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<div id="booking">
+	<f:form id="booking-step1" pageUid="{nextStepPID}" method="POST" name="booking-step1" class="form-booking" action="secondReservationStep" controller="Vojage" arguments="{from: '{list_from-city}', to: '{list_to-city}' }">
+		<f:render partial="FirstStep/Transport" arguments="{_all}"/>
+		<f:render partial="FirstStep/Person" arguments="{_all}"/>
+		<f:render partial="FirstStep/HiddenFields" />
+
+		<fieldset class="fieldset-aller">
+        	<legend><f:translate key='tx_tours_domain_model_tours.dayDeparture'/></legend>
+	        
+	        <!--Will be filled by jQuery datepicker plugin -->
+	        <div class="block-datepicker aller-datepicker"></div>
+
+	        <div class="info-datepicker">
+	        	<!-- When user updates the even from calendar this data updates by jQuery datapicker plugin  -->
+	            <p><f:translate key='tx_tours_domain_model_tours.the'/> <span id="from-date" class="txt-orange date-datepicker"></span></p>
+	            
+            	<f:render partial="FirstStep/FromOptions" arguments="{vojages : '{vojages}', class: 'aller' }"/>
+		        <div><f:render partial="FirstStep/ToOptions" arguments="{vojages : '{vojages}', class: 'aller-departure' }"/></div>
+	   		</div>
+
+        	<div class="clear"></div>
+        </fieldset>
+
+		 <fieldset class="fieldset-retour">
+		 	 <legend><f:translate key='tx_tours_domain_model_tours.dayBack'/></legend>
+
+		 	 <!--Will be field by jQuery datepicker plugin -->
+	        <div class="block-datepicker retour-datepicker"></div>
+			
+			<div class="info-datepicker">
+	        	<!-- When user updates the even from calendar this data updates by jQuery datapicker plugin  -->
+	            <p><f:translate key='tx_tours_domain_model_tours.the'/> <span id="to-date" class="txt-orange date-datepicker"></span></p>
+	            
+            	<f:render partial="FirstStep/FromOptions" arguments="{vojages : '{backWayEvents}', class: 'retour' }"/>
+	        
+		        <div><f:render partial="FirstStep/ToOptions" arguments="{vojages : '{backWayEvents}', class: 'retour' }"/></div>
+	   		</div>
+
+		 </fieldset>	
+
+		<f:render partial="FirstStep/ToTheSecondStep" arguments="{_all}"/>
+		
+		<f:if condition="{event} == 1">
+			<f:form.hidden name="event" value="1" />
+		</f:if>
+	</f:form>
+</div>
+
+
+<script type="text/javascript">
+	var filterByDate 							= '<h:uri.ajaxAction controller="Vojage" action="filterByDate" />',
+		findDestinationByAreaDateAndArrivalCity = '<h:uri.ajaxAction controller="Vojage" action="findDestinationByAreaDateAndArrivalCity" />',
+		fromCity = "{list_from-city}",
+		toCity   = "{list_to-city}";
+</script>
+
+</f:section>

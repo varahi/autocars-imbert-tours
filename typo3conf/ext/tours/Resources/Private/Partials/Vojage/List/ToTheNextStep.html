@@ -1,0 +1,30 @@
+<!-- When the button is clicked, some POST data will be passed to the next [first] reservation step.
+
+	POST date that will be passed  [More detail in the hiddenFiels partial ]
+		tx_tours_vojage_from-place
+			Contains information from which city user is going to travel
+     	tx_tours_vojage_to-place
+     		Contains information which city is the destination
+
+	actionLabel: 
+		Contains the action button text 
+-->
+<f:if condition="{noButtonMode} == 0">
+	<f:then>
+	     <div class="input-submit">
+			<f:form.submit value="{actionLabel}" title="{actionLabel}" class="bt-bordure-orange" />
+		</div>
+	</f:then>
+    <f:else>
+	     <div class="input-submit"><f:form.submit title="{actionLabel}"/></div>
+
+		<script>
+			$('input').on('ifChecked', function(event) {
+		  		if ($(this).hasClass('from-city') || $(this).hasClass('to-city')) {
+		  			updateHidden();
+		  			$( "#reservation-form" ).submit();
+		  		}
+			});
+		</script>
+    </f:else>
+</f:if>

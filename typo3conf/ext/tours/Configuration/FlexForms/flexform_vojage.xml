@@ -1,0 +1,300 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Function</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Select function</label>
+							<onChange>reload</onChange>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">list</numIndex>
+										<numIndex index="1">Vojage->list;Vojage->findDestinations</numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">first step of the reservation</numIndex>
+										<numIndex index="1">Vojage->firstReservationStep;Vojage->secondReservationStep;Vojage->filterByDate;Vojage->findDestinationByAreaDateAndArrivalCity;</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">second step of the reservation</numIndex>
+										<numIndex index="1">Vojage->secondReservationStep;Users->new;Users->create</numIndex>
+									</numIndex>
+									<numIndex index="3">
+										<numIndex index="0">return to shop</numIndex>
+										<numIndex index="1">Vojage->returnToShop</numIndex>
+									</numIndex>
+									<numIndex index="4">
+										<numIndex index="0">valid order</numIndex>
+										<numIndex index="1">Vojage->validOrder</numIndex>
+									</numIndex>
+                                    <numIndex index="5">
+										<numIndex index="0">Middle Office</numIndex>
+										<numIndex index="1">Vojage->middleOffice;Vojage->create;Vojage->edit;Vojage->updateVojage;Vojage->updatePlaceMax;Vojage->delete;Vojage->formValideOrder;Vojage->valideOrder;Vojage->exportVoyageurs;Vojage->hiddenVoyage;Vojage->showVoyage</numIndex>
+									</numIndex>
+									<numIndex index="6">
+										<numIndex index="0">list event</numIndex>
+										<numIndex index="1">Vojage->listEvent;Vojage->findDestinations</numIndex>
+									</numIndex>
+									<numIndex index="10">
+										<numIndex index="0">Update vojage test</numIndex>
+										<numIndex index="1">Vojage->updateVojage;</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+
+					<settings.departureCases>
+						<TCEforms>
+							<label>Departure options</label>
+							<config>
+								<type>select</type>
+								<items type="array"></items>
+								<foreign_table>tx_tours_domain_model_city</foreign_table>
+								<foreign_table_where> </foreign_table_where>
+								<maxitems>99</maxitems>
+								<size>6</size>
+							</config>
+							<displayCond>FIELD:switchableControllerActions:IN:Vojage->list;Vojage->findDestinations,Vojage->listEvent;Vojage->findDestinations</displayCond>
+						</TCEforms>
+					</settings.departureCases>
+
+
+					<settings.destinationCases>
+						<TCEforms>
+							<label>Destination options</label>
+							<config>
+								<type>select</type>
+								<items type="array"></items>
+								<foreign_table>tx_tours_domain_model_city</foreign_table>
+								<foreign_table_where> </foreign_table_where>
+								<maxitems>99</maxitems>
+								<size>6</size>
+							</config>
+							<displayCond>FIELD:switchableControllerActions:IN:Vojage->list;Vojage->findDestinations,Vojage->listEvent;Vojage->findDestinations</displayCond>
+						</TCEforms>
+					</settings.destinationCases>
+
+					<settings.allowedCityPlaces>
+						<TCEforms>
+							<label>Show only this city places </label>
+							<config>
+								<type>select</type>
+								<items type="array"></items>
+								<foreign_table>tx_tours_domain_model_area</foreign_table>
+								<maxitems>99</maxitems>
+								<size>8</size>
+							</config>
+							<displayCond>FIELD:switchableControllerActions:IN:Vojage->list;Vojage->findDestinations,Vojage->listEvent;Vojage->findDestinations</displayCond>
+						</TCEforms>
+					</settings.allowedCityPlaces>
+
+
+					<settings.ajaxOnPages>
+						<TCEforms>
+							<label>Ajax on the next pages:</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>3</size>
+								<maxitems>99</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+								<wizards>
+									<suggest>
+										<type>suggest</type>
+									</suggest>
+								</wizards>
+							</config>
+							<displayCond>FIELD:switchableControllerActions:IN:Vojage->list;Vojage->findDestinations,Vojage->listEvent;Vojage->findDestinations</displayCond>
+						</TCEforms>
+					</settings.ajaxOnPages>
+
+
+					<settings.fromLabel>
+						<TCEforms>
+							<label>From location label</label>
+							<config>
+								<type>input</type>
+								<size>20</size>
+								<eval>trim</eval>
+							</config>
+							<displayCond>FIELD:switchableControllerActions:IN:Vojage->list;Vojage->findDestinations,Vojage->listEvent;Vojage->findDestinations</displayCond>
+						</TCEforms>
+					</settings.fromLabel>
+
+					<settings.toLabel>
+						<TCEforms>
+							<label>Destination label</label>
+							<config>
+								<type>input</type>
+								<size>20</size>
+								<eval>trim</eval>
+							</config>
+							<displayCond>FIELD:switchableControllerActions:IN:Vojage->list;Vojage->findDestinations,Vojage->listEvent;Vojage->findDestinations</displayCond>
+						</TCEforms>
+					</settings.toLabel>
+
+					<settings.toImage>
+						<TCEforms>
+							<label>To Image</label>
+							<config>
+								<type>group</type>
+								<internal_type>file</internal_type>
+								<allowed>gif, jpg, jpeg, png, csv</allowed>
+								<maxitems>1</maxitems>
+								<size>1</size>
+								<show_thumbs>1</show_thumbs>
+							</config>
+							<displayCond>FIELD:switchableControllerActions:IN:Vojage->list;Vojage->findDestinations,Vojage->listEvent;Vojage->findDestinations</displayCond>
+						</TCEforms>
+					</settings.toImage>
+
+					<!-- Action button label that used in list mode -->
+					<settings.actionButtonLabel>
+						<TCEforms>
+							<label>Button label</label>
+							<config>
+								<type>input</type>
+								<size>20</size>
+								<eval>trim</eval>
+							</config>
+							<displayCond>FIELD:switchableControllerActions:IN:Vojage->list;Vojage->findDestinations,Vojage->listEvent;Vojage->findDestinations</displayCond>
+						</TCEforms>
+					</settings.actionButtonLabel>
+
+
+					<!-- first step of the reservation page PID  -->
+					<settings.firstReservationPid>
+						<TCEforms>
+							<label>Fist step PID</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+								<wizards>
+									<suggest>
+										<type>suggest</type>
+									</suggest>
+								</wizards>
+							</config>
+							<displayCond>FIELD:switchableControllerActions:IN:Vojage->list;Vojage->findDestinations,Vojage->listEvent;Vojage->findDestinations</displayCond>
+						</TCEforms>
+					</settings.firstReservationPid>
+
+					<!-- second step of the reservation page PID  -->
+					<settings.secondReservationPid>
+						<TCEforms>
+							<label>Second step PID</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+								<wizards>
+									<suggest>
+										<type>suggest</type>
+									</suggest>
+								</wizards>
+							</config>
+							<displayCond>FIELD:switchableControllerActions:=:Vojage->firstReservationStep;Vojage->secondReservationStep;Vojage->filterByDate;Vojage->findDestinationByAreaDateAndArrivalCity;</displayCond>
+						</TCEforms>
+					</settings.secondReservationPid>
+
+
+					<!-- Back to the previous step button label -->
+					<settings.previousButtonLabel>
+						<TCEforms>
+							<label>Previous step button label</label>
+							<config>
+								<type>input</type>
+								<size>20</size>
+								<eval>trim</eval>
+							</config>
+							<displayCond>FIELD:switchableControllerActions:=:Vojage->secondReservationStep;Users->new;Users->create</displayCond>
+						</TCEforms>
+					</settings.previousButtonLabel>
+
+					<!-- From the second to the first step PID  -->
+					<settings.fromSecondToFirstStepPID>
+						<TCEforms>
+							<label>Previous step PID</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+								<wizards>
+									<suggest>
+										<type>suggest</type>
+									</suggest>
+								</wizards>
+							</config>
+							<displayCond>FIELD:switchableControllerActions:=:Vojage->secondReservationStep;Users->new;Users->create</displayCond>
+						</TCEforms>
+					</settings.fromSecondToFirstStepPID>
+
+
+					<!-- How many months should be included in the first step calendar  -->
+					<settings.monthLimit>
+						<TCEforms>
+							<label>Visible only before that date</label>
+							<config>
+								<type>input</type>
+								<size>20</size>
+								<eval>datetime</eval>
+							</config>
+						</TCEforms>
+					</settings.monthLimit>
+                                        
+                                        <!-- returnToShop -->
+					<settings.returnToShopTextOK>
+						<TCEforms>
+							<label>Text paiement OK</label>
+							<config>
+								<type>text</type>
+                                                                <cols>24</cols>
+                                                                <rows>3</rows>
+                                                                <defaultExtras>richtext[*]:rte_transform[mode=ts_css]</defaultExtras>
+							</config>
+							<displayCond>FIELD:switchableControllerActions:=:Vojage->returnToShop;</displayCond>
+						</TCEforms>
+					</settings.returnToShopTextOK>
+                                        
+                                        <!-- returnToShop -->
+					<settings.returnToShopTextKO>
+						<TCEforms>
+							<label>Text paiement KO</label>
+							<config>
+								<type>text</type>
+                                                                <cols>24</cols>
+                                                                <rows>3</rows>
+                                                                <defaultExtras>richtext[*]:rte_transform[mode=ts_css]</defaultExtras>
+							</config>
+							<displayCond>FIELD:switchableControllerActions:=:Vojage->returnToShop;</displayCond>
+						</TCEforms>
+					</settings.returnToShopTextKO>
+
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

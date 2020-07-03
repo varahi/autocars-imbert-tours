@@ -1,0 +1,112 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:layout name="Default" />
+<f:section name="main">
+
+    <a href="" class="bt-add-voyage link-lightbox-ui" title="Ajouter un nouveau voyage" data-dialog="lightbox-add-voyage">Ajouter un nouveau voyage</a>
+    |
+    <f:link.action pageUid="47" action="firstReservationStep" controller="Voyaje" arguments="{from-place: 'Marseille', to-place:'Les Orres'}" title="Créer une réservation">Créer une réservation</f:link.action>
+    |
+    <f:link.action action="formValideOrder" controller="Voyaje" title="Voir les clients qui n'ont pas payé" >Non payés</f:link.action>
+    <div id="middle-office-list">
+        <f:form id="edit-vojage" class="form-vojage" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="updateVojages" pageType="111">
+            <table>
+                <tr>
+                    <th>Places max</th>
+                    <th>Places réservées</th>
+                    <th>Date de départ</th>
+                    <th>Ville de départ</th>
+                    <th>Heure de départ</th>
+                    <th>Date d'arrivée</th>
+                    <th>Ville d'arrivée</th>
+                    <th>Heure d'arrivée</th>
+                    <th width="200">Actions</th>
+                </tr>
+                <f:for each="{voyages}" as="voyage" key="vKey" iteration="vIteration">
+                    <tr>
+                        <td>Uid - {voyage.uid} <f:form.textfield name="placeMax" value="{voyage.placesMax}" /> <a href="#" class="bt-save" title="Sauvegarder">Sauvegarder</a></td>
+                        <td><p>{voyage.totalPlacesReservees}</p></td>
+                        <td><p><f:format.date format="%A">{voyage.departureDate}</f:format.date><br><f:format.date format="d/m/Y">{voyage.departureDate}</f:format.date></p></td>
+                        <td><p>{voyage.zoneDepart}</p></td>
+                        <td><p><f:format.date format="H:i">{voyage.departureDate}</f:format.date></p></td>
+                        <td><p><f:format.date format="%A">{voyage.arrivalDate}</f:format.date><br><f:format.date format="d/m/Y">{voyage.arrivalDate}</f:format.date></p></td>
+                        <td><p>{voyage.zoneArrivee}</p></td>
+                        <td><p><f:format.date format="H:i">{voyage.arrivalDate}</f:format.date></p></td>
+                        <td>
+							<p>
+								<f:if condition="{voyage.totalPlacesReservees} > 0">
+									<a href="#" class="bt-print" title="Imprimer la liste des passagers">Imprimer la liste des passagers</a> |
+								</f:if>
+								<f:if condition="{voyage.hidden} > 0">
+									<f:then><a href="#" class="bt-show" title="Afficher le voyage sur le site">Afficher le voyage sur le site</a> | </f:then>
+									<f:else><a href="#" class="bt-hidden" title="Cacher le voyage sur le site">Cacher le voyage sur le site</a> | </f:else>
+								</f:if>
+								<a href="#" class="bt-copy link-lightbox-ui" title="Dupliquer le voyage" data-dialog="lightbox-copy-voyage">Dupliquer</a> |
+								<f:link.action controller="Vojage" action="edit" arguments="{voyage: voyage}" class="bt-edit _link-lightbox-ui" title="Edit le voyage">
+									Edit
+								</f:link.action> |
+								<a href="#" class="bt-delete" title="Supprimer">Supprimer</a>
+							</p>
+                        <div class="list-voyages">
+                                <f:for each="{voyage.tabIdVoyage}" as="idVoyage" key="idVKey" iteration="idVIteration">
+                                        <f:form.hidden name="idVoyage[]" value="{idVoyage}" />
+                                </f:for>
+                        </div>
+                        </td>
+                    </tr>
+                </f:for>
+            </table>
+        </f:form>
+    </div>
+	
+
+	<f:form id="edit-placeMax" class="form-middle" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="updatePlaceMax" pageType="111">
+		<f:form.textfield name="placeMax" value="" />
+		<div class="list-voyages"></div>
+	</f:form>
+	
+	<f:form id="export-resa" class="form-middle" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="exportVoyageurs" pageType="111">
+		<div class="list-voyages"></div>
+	</f:form>
+	
+	<f:form id="delete-voyage" class="form-middle" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="delete" pageType="111">
+		<div class="list-voyages"></div>
+	</f:form>
+	
+	<f:form id="hidden-voyage" class="form-middle" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="hiddenVoyage" pageType="111">
+		<div class="list-voyages"></div>
+	</f:form>
+	
+	<f:form id="show-voyage" class="form-middle" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="showVoyage" pageType="111">
+		<div class="list-voyages"></div>
+	</f:form>
+
+	<div id="lightbox-copy-voyage" class="lightbox-default-ui">
+		<div class="modal-content">
+             <h3>Dupliquer un voyage</h3>
+		</div>
+	</div>
+
+	<div id="lightbox-add-voyage" class="lightbox-default-ui">
+		<div class="modal-content">
+             <h3>Ajouter un nouveau voyage</h3>
+			<div class="input-select">
+				<select id="destinationStart">
+					<option value="0">Choisir un voyage</option>
+					<option value="queyras-paris">Le Queyras - Paris</option>
+					<option value="queyras-marseille">Le Queyras - Marseille</option>
+					<option value="marseille">Marseille - Le Queyras</option>
+					<option value="paris">Paris - Le Queyras</option>
+				</select>
+			</div>
+			
+			<f:render partial="Vojage/FormAddVoyageQueyrasParis" arguments="{_all}" />
+
+			<f:render partial="Vojage/FormAddVoyageQueyrasMarseille" arguments="{_all}" />
+
+			<f:render partial="Vojage/FormAddVoyageMarseilleQueyras" arguments="{_all}" />
+
+			<f:render partial="Vojage/FormAddVoyageParisQueyras" arguments="{_all}" />
+		</div>
+	</div>
+</f:section>

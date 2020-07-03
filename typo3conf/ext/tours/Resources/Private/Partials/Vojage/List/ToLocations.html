@@ -1,0 +1,47 @@
+<div class="radio-grp from-group ">
+	<f:if condition="{toActive}!='-1'"> <!-- If the user has triggered one of the cities before -->
+	    <f:then>
+		    <f:for each="{destinationList}" as="from" iteration="i">
+				<f:if condition="{i.index}=={toActive}"><f:then> <!-- Set the active city, that user has choosen before -->
+		     		 <div class="input-radio active">
+						<input type="radio" class="to-city to-city__{from.title}" name="arrive" checked id="{from.title}"/>
+						<label for="{from.title}">
+							{from.title}
+							<small><f:for each="{from.areas}" as="area"> • {area}</f:for></small>
+						</label>
+					</div>
+				</f:then><f:else>
+					<div class="input-radio <f:if condition="{from.title} == 'Serre Chevalier'">paris</f:if> <f:if condition="{from.title} == 'Montgenèvre'">paris</f:if>">
+						<input type="radio" class="to-city to-city__{from.title}" name="arrive" id="{from.title}"/>
+						<label for="{from.title}" >
+							{from.title}
+							<small><f:for each="{from.areas}" as="area"> • {area}</f:for></small>
+						</label>
+					</div>
+				</f:else></f:if>
+			</f:for>
+	    </f:then>
+
+	    <f:else> <!-- If the user has never triggered the city before -->
+	      	<f:for each="{destinationList}" as="from" iteration="i">
+				<f:if condition="{i.isFirst}"><f:then> <!-- The active arrival city if the first one -->
+		     		 <div class="input-radio active">
+						<input type="radio" class="to-city to-city__{from.title}" name="arrive" checked id="{from.title}"/>
+						<label for="{from.title}">
+							{from.title}
+							<small><f:for each="{from.areas}" as="area"> • {area}</f:for></small>
+						</label>
+					</div>
+				</f:then><f:else>
+					<div class="input-radio <f:if condition="{from.title} == 'Serre Chevalier'">paris</f:if> <f:if condition="{from.title} == 'Montgenèvre'">paris</f:if>">
+						<input type="radio" class="to-city to-city__{from.title}" name="arrive" id="{from.title}"/>
+						<label for="{from.title}" >
+							{from.title}
+							<small><f:for each="{from.areas}" as="area"> • {area}</f:for></small>
+						</label>
+					</div>
+				</f:else></f:if>
+			</f:for>
+	    </f:else>
+ 	 </f:if>
+</div>

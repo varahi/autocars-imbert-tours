@@ -1,0 +1,19 @@
+{namespace c=Autocars\Tours\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="main">
+<ul class="bxslider">
+	<f:for each="{tours}" as="tour">
+		<li>
+			<f:link.action action="show" controller="Tour" arguments="{tour: '{tour}' }"  pageUid="{detailPageUid}" title="{tour.title}">
+				<img src="{f:uri.image(src: 'fileadmin{c:sysfileTaker(uid: \'{tour.pictures.0.uid}\', limit: \'1\' )}', width: 218, minWidth: 218, maxWidth: 218, height: '218c', minHeight: 218, maxHeight: 218)}" width="218" height="218" alt="{tour.title}" title="{tour.title}">
+				<div class="csc-textpic-text">
+					<h3>{tour.title}</h3>
+					<p>{tour.daysCount} <f:translate key='tx_tours_domain_model_tours.day'/><f:if condition="{tour.daysCount}>1">s</f:if> / {tour.nightsCount} <f:translate key='tx_tours_domain_model_tours.night'/><f:if condition="{tour.nightsCount}>1">s</f:if></p>
+				</div>
+			</f:link.action>
+		</li>
+	</f:for>
+</ul>
+</f:section>

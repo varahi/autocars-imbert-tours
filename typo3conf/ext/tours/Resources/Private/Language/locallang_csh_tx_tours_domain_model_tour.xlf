@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-11-05T23:01:44Z" product-name="tours">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="days_count.description">
+				<source>daysCount</source>
+			</trans-unit>
+			<trans-unit id="nights_count.description">
+				<source>nightsCount</source>
+			</trans-unit>
+			<trans-unit id="departure_tstamp.description">
+				<source>departureTstamp</source>
+			</trans-unit>
+			<trans-unit id="leave_tstamp.description">
+				<source>leaveTstamp</source>
+			</trans-unit>
+			<trans-unit id="price.description">
+				<source>price</source>
+			</trans-unit>
+			<trans-unit id="pictures.description">
+				<source>pictures</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

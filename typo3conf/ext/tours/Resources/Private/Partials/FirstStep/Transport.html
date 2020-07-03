@@ -1,0 +1,42 @@
+<!-- Represents the type of the trip ( just one way ||  back and worth ) -->
+
+<f:if condition="{event} == 1">
+	<f:then>
+		<input type="hidden" name="tx_tours_vojage[tx_tours_vojage][type-res]" value="aller-simple">
+	</f:then>
+	<f:else>
+		<fieldset class="fieldset-transport">
+			<legend><f:translate key='tx_tours_domain_model_tours.myTransport'/></legend>
+			
+			<div class="radio-grp">
+				<f:if condition="{backWayEvents}">
+					<f:then> <!-- If we have backway events, display backway section  and make the 'backway' option checked -->
+						
+						<div class="input-radio active ">
+							<input type="radio" id="aller-retour" name="tx_tours_vojage[tx_tours_vojage][type-res]" value="aller-retour" checked="checked" />
+							<label for="aller-retour"><f:translate key='tx_tours_domain_model_tours.goBack'/></label>
+						</div>
+						<f:link.action action="firstReservationStep" controller="Vojage" arguments="{from: 'all', to: 'all'}" title="" >
+							<div class="input-radio {f:if(then: '', else: 'active' , condition: '{backWayEvents}' )}">
+								<input type="radio" id="retour" name="tx_tours_vojage[tx_tours_vojage][type-res]" value="aller-simple" />
+								<label for="retour"><f:translate key='tx_tours_domain_model_tours.simple'/></label>
+							</div>
+						</f:link.action>	
+					</f:then> <!-- If we don't have any backway events, display just oneway options -->
+					<f:else>
+						<f:link.action action="firstReservationStep" controller="Vojage" title="" arguments="{from: '', to: ''}" >
+							<div class="input-radio">
+								<input type="radio" id="aller-retour" name="tx_tours_vojage[tx_tours_vojage][type-res]" value="aller-retour" />
+								<label for="aller-retour"><f:translate key='tx_tours_domain_model_tours.goBack'/></label>
+							</div>
+						</f:link.action>
+						<div class="input-radio active">
+							<input type="radio" id="retour" name="tx_tours_vojage[tx_tours_vojage][type-res]" value="aller-simple" checked="checked" />
+							<label for="retour"><f:translate key='tx_tours_domain_model_tours.simple'/></label>
+						</div>
+					</f:else>
+				</f:if>
+			</div>
+		</fieldset>
+	</f:else>
+</f:if>

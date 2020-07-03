@@ -1,0 +1,39 @@
+<f:layout name="Default" />
+<f:section name="main">
+    
+    <f:link.action action="middleOffice" controller="Voyaje" title="Liste des voyages" >Liste des voyages</f:link.action>
+    |
+    <f:link.action pageUid="47" action="firstReservationStep" controller="Voyaje" arguments="{from-place: 'Marseille', to-place:'Les Orres'}" title="Créer une réservation">Créer une réservation</f:link.action>
+    |
+    <f:link.action action="formValideOrder" controller="Voyaje" title="Voir les clients qui n'ont pas payé" >Non payés</f:link.action>
+
+    <div id="middle-office-list">
+        <f:form id="edit-vojage" class="form-vojage" method="POST" name="vojage" pluginName="vojage" controller="Vojage" action="valideOrder" pageType="111">
+            <table>
+                <tr>
+                    <th>Client</th>
+                    <th>Prix</th>
+                    <th>Aller</th>
+                    <th>Date de l'aller</th>
+                    <th>Retour</th>
+                    <th>Date du retour</th>
+                    <th>Actions</th>
+                </tr>
+                <f:for each="{orders}" as="order" key="oKey" iteration="oIteration">
+                    <tr>
+                        <td><p>{order.idUsers.firstName} {order.idUsers.lastName} ({order.idUsers.email})</p></td>
+                        <td><p>{order.price} €</p></td>
+                        <td><p>{order.fromCity}<br>{order.fromCity2}</p></td>
+                        <td><p>{order.fromTime} {order.fromHour}</p></td>
+                        <td><p>{order.toCity}<br>{order.toCity2}</p></td>
+                        <td><p>{order.toTime} {order.toHour}</p></td>
+                        <td>
+                            <p><f:link.action action="valideOrder" controller="Voyaje" arguments="{uid: order.uid}" title="Valider" class="bt-valid" >Valider</f:link.action></p>
+                        </td>
+                    </tr>
+                </f:for>
+            </table>
+        </f:form>
+    </div>
+
+</f:section>
