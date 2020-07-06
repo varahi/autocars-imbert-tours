@@ -42,9 +42,17 @@
 									<f:else><a href="#" class="bt-hidden" title="Cacher le voyage sur le site">Cacher le voyage sur le site</a> | </f:else>
 								</f:if>
 								<a href="#" class="bt-copy link-lightbox-ui" title="Dupliquer le voyage" data-dialog="lightbox-copy-voyage">Dupliquer</a> |
-								<f:link.action controller="Vojage" action="edit" arguments="{voyage: voyage}" class="bt-edit _link-lightbox-ui" title="Edit le voyage">
+
+								<f:link.action
+											   pluginName="VojageTest"
+											   pageUid="{82}"
+											   extensionName="Tours"
+											   controller="Vojage"
+											   action="edit" arguments="{voyage: voyage}"
+											   class="bt-edit _link-lightbox-ui" title="Edit le voyage">
 									Edit
 								</f:link.action> |
+
 								<a href="#" class="bt-delete" title="Supprimer">Supprimer</a>
 							</p>
                         <div class="list-voyages">
