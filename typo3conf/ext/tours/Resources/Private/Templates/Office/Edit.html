@@ -13,18 +13,28 @@
                 controller="Vojage" >
 
         </f:form>
+
+        <f:form action="updateVojage"
+                name="voyage"
+                pluginName="Office"
+                extensionName="Tours"
+                controller="Office"
+                pageUid="82"
+                arguments="{voyage: voyage}"
+                noCache="0"
+                noCacheHash="0">
+
+        </f:form>
     </f:comment>
 
 
+    <h1>Edit office action</h1>
+
     <f:form action="updateVojage"
             name="voyage"
-            pluginName="Office"
-            extensionName="Tours"
-            controller="Office"
-            pageUid="82"
+            object="{voyage}"
             arguments="{voyage: voyage}"
-            noCache="0"
-            noCacheHash="1">
+            noCache="1">
 
         <table class="tx_tours-edit">
             <tr>

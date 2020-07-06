@@ -3,6 +3,8 @@
 <f:layout name="Default" />
 <f:section name="main">
 
+	<f:flashMessages class="notate" />
+
     <a href="" class="bt-add-voyage link-lightbox-ui" title="Ajouter un nouveau voyage" data-dialog="lightbox-add-voyage">Ajouter un nouveau voyage</a>
     |
     <f:link.action pageUid="47" action="firstReservationStep" controller="Voyaje" arguments="{from-place: 'Marseille', to-place:'Les Orres'}" title="Créer une réservation">Créer une réservation</f:link.action>
@@ -43,14 +45,15 @@
 								</f:if>
 								<a href="#" class="bt-copy link-lightbox-ui" title="Dupliquer le voyage" data-dialog="lightbox-copy-voyage">Dupliquer</a> |
 
-								<f:link.action
-											   pluginName="VojageTest"
-											   pageUid="{82}"
+
+								<f:link.action action="edit"
+											   pluginName="Office"
 											   extensionName="Tours"
-											   controller="Vojage"
-											   action="edit" arguments="{voyage: voyage}"
-											   class="bt-edit _link-lightbox-ui" title="Edit le voyage">
-									Edit
+											   controller="Office"
+											   pageUid="82"
+											   noCacheHash="1"
+											   arguments="{voyage: voyage}"
+											   class="bt-edit _link-lightbox-ui" title="Edit le voyage">Edit
 								</f:link.action> |
 
 								<a href="#" class="bt-delete" title="Supprimer">Supprimer</a>

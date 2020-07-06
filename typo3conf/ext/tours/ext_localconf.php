@@ -34,16 +34,12 @@ if (!defined('TYPO3_MODE')) {
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
     'Autocars.' . $_EXTKEY,
-    'VojageTest',
+    'Office',
     array(
-        //'Vojage' => 'findVojagesByLocation, edit, updateVojage',
-        //'Vojage' => 'middleOffice, edit, update',
-        'Test' => 'edit, update',
+        'Office' => 'edit, updateVojage',
     ),
     // non-cacheable actions
     array(
-        //'Vojage' => 'middleOffice, edit, update',
-        //'Vojage' => 'middleOffice, edit, update',
-        'Test' => 'edit, update',
+        'Office' => 'edit, updateVojage',
     )
 );

@@ -2350,6 +2350,8 @@ class VojageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      * action editVoyage
      *
      * @param \Autocars\Tours\Domain\Model\Vojage $voyage
+     * @ignorevalidation $voyage
+     *
      * @return void
      */
     public function editAction(
@@ -2378,24 +2380,6 @@ class VojageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 
         $voyage->setTotalPlacesReservees($totalPlacesReservees);
         $voyage->setTabIdVoyage($tabIdVoyage);
-    }
-
-    /**
-     * action update
-     *
-     * \Autocars\Tours\Domain\Model\Vojage $voyage
-     *
-     * @return void
-     */
-    public function updateVojageAction(\Autocars\Tours\Domain\Model\Vojage $voyage)
-    {
-        \TYPO3\CMS\Core\Utility\DebugUtility::debug($voyage);
-
-        //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($fromList, 'fromList');
-        //$this->vojageRepository->update($voyage);
-        //$this->persistenceManager->persistAll();
-        //$this->flashMessageService('tx_tours.voyageUdpated', 'successfullyStatus', 'OK');
-        //$this->redirect('MiddleOffice','Vojage',null, array(), $this->settings['redirectPage']);
     }
 
     /**

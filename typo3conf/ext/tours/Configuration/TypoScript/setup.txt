@@ -44,3 +44,15 @@ lib.tours {
 #}
 
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:tours/Configuration/TypoScript/Ext/Formhandler/" extensions="txt">
+
+/*
+plugin {
+	tx_tours {
+		features {
+			requireCHashArgumentForActionArguments = 0
+		}
+	}
+}
+*/
+
+plugin.tx_tours.features.requireCHashArgumentForActionArguments = 0
