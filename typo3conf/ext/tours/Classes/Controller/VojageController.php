@@ -43,7 +43,6 @@ class VojageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      */
     protected $persistenceManager = null;
 
-    protected $path_log = '/home/imbert/domains/autocars-imbert.com/public_html/typo3conf/ext/tours/Logs/';
     protected $tabZone = array(
         '1' => 'Marseille/Aix',
         '2' => 'Hautes-Alpes',
@@ -213,6 +212,13 @@ class VojageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      * @inject
     */
     protected $childPriceRepository = null;
+
+    //protected $path_log = '/home/imbert/domains/autocars-imbert.com/public_html/typo3conf/ext/tours/Logs/';
+    protected $path_log = '';
+
+    public function __construct() {
+        $this->path_log = PATH_site . 'public_html/typo3conf/ext/tours/Logs/';
+    }
 
 
     /**

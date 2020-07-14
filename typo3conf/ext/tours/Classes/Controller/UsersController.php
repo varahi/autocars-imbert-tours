@@ -165,7 +165,9 @@ class UsersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             // version pack 1.0f
             $params['vads_contrib']='Pack_PSP_1.0f';
 
-            $conf_txt = parse_ini_file("/home/imbert/domains/autocars-imbert.com/public_html/typo3conf/ext/tours/Classes/ConfModuleBancaire.txt");
+            $confFile = PATH_site . 'typo3conf/ext/tours/Classes/ConfModuleBancaire.txt';
+            //$conf_txt = parse_ini_file("/home/imbert/domains/autocars-imbert.com/public_html/typo3conf/ext/tours/Classes/ConfModuleBancaire.txt");
+            $conf_txt = parse_ini_file($confFile);
             if ($conf_txt['vads_ctx_mode'] == "TEST") {
                 $conf_txt['key'] = $conf_txt['TEST_key'];
             }
@@ -309,8 +311,9 @@ class UsersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     {
         // Dans cet exemple la valeur du compteur est stocké dans un fichier count.txt,incrémenté de 1 et remis à zéro si la valeur est superieure à 899999
             // ouverture/lock
-            $filename = "/home/imbert/domains/autocars-imbert.com/public_html/typo3conf/ext/tours/Classes/count.txt";// il faut ici indiquer le chemin du fichier.
-            $fp = fopen($filename, 'r+');
+            //$filename = "/home/imbert/domains/autocars-imbert.com/public_html/typo3conf/ext/tours/Classes/count.txt";// il faut ici indiquer le chemin du fichier.
+            $confFile = PATH_site . 'typo3conf/ext/tours/Classes/count.txt';
+            $fp = fopen($confFile, 'r+');
         flock($fp, LOCK_EX);
 
         // lecture/incrémentation
