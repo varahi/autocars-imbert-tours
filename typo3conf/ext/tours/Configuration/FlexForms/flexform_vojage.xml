@@ -36,15 +36,11 @@
 									</numIndex>
                                     <numIndex index="5">
 										<numIndex index="0">Middle Office</numIndex>
-										<numIndex index="1">Vojage->middleOffice;Vojage->create;Vojage->edit;Vojage->updateVojage;Vojage->updatePlaceMax;Vojage->delete;Vojage->formValideOrder;Vojage->valideOrder;Vojage->exportVoyageurs;Vojage->hiddenVoyage;Vojage->showVoyage</numIndex>
+										<numIndex index="1">Vojage->middleOffice;Vojage->create;Vojage->updatePlaceMax;Vojage->delete;Vojage->formValideOrder;Vojage->valideOrder;Vojage->exportVoyageurs;Vojage->hiddenVoyage;Vojage->showVoyage</numIndex>
 									</numIndex>
 									<numIndex index="6">
 										<numIndex index="0">list event</numIndex>
 										<numIndex index="1">Vojage->listEvent;Vojage->findDestinations</numIndex>
-									</numIndex>
-									<numIndex index="10">
-										<numIndex index="0">Update vojage test</numIndex>
-										<numIndex index="1">Vojage->updateVojage;</numIndex>
 									</numIndex>
 								</items>
 							</config>

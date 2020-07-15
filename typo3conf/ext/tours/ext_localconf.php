@@ -20,13 +20,13 @@ if (!defined('TYPO3_MODE')) {
     'Vojage',
     array(
         //'Vojage' => 'findVojagesByLocation, edit, updateVojage',
-        'Vojage' => 'create, list, findDestinations, firstReservationStep, secondReservationStep, filterByDate, findDestinationByAreaDateAndArrivalCity, findAllVojages, edit, middleOffice',
+        'Vojage' => 'create, list, findDestinations, firstReservationStep, secondReservationStep, filterByDate, findDestinationByAreaDateAndArrivalCity, findAllVojages, middleOffice',
         'Users' => 'new, create, middleOffice',
     ),
     // non-cacheable actions
     array(
         //'Vojage' => 'create, list, findDestinations, firstReservationStep, secondReservationStep, filterByDate, findDestinationByAreaDateAndArrivalCity, findAllVojages, edit, updateVojage',
-        'Vojage' => 'findVojagesByLocation, edit',
+        'Vojage' => 'findVojagesByLocation',
         'Users' => 'new, create',
     )
 );
