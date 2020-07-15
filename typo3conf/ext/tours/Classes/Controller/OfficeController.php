@@ -269,8 +269,8 @@ class OfficeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      *
      * @return void
      */
-    public function indexAction(){
-
+    public function indexAction()
+    {
     }
 
     /**
@@ -280,11 +280,10 @@ class OfficeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     {
 
         /** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
-        $pageRenderer = GeneralUtility::makeInstance( \TYPO3\CMS\Core\Page\PageRenderer::class);
+        $pageRenderer = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
         $extRelPath = ExtensionManagementUtility::siteRelPath('tours');
         $pageRenderer->addJsFooterFile($extRelPath . "Resources/Public/JavaScripts/datetimepicker/jquery.datetimepicker.full.js", 'text/javascript', false, false, '', true);
         $pageRenderer->addCssFile($extRelPath . "Resources/Public/Css/jquery.datetimepicker.min.css", 'stylesheet', 'all', '', true);
-
     }
 
 
@@ -331,7 +330,6 @@ class OfficeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
         //$fromLocation = $this->arrivalLocationRepository->findAll();
         $this->view->assign('fromLocation', $this->arrivalLocationRepository->findAll());
         $this->view->assign('toLocation', $this->destinationLocationRepository->findAll());
-
     }
 
 
@@ -340,15 +338,22 @@ class OfficeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      *
      * @return void
      */
-    public function initializeUpdateVojageAction() {
+    public function initializeUpdateVojageAction()
+    {
         if ($this->arguments->hasArgument('voyage')) {
             $this->arguments->getArgument('voyage')->getPropertyMappingConfiguration()->forProperty('departureDate')
-                ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
-                    \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT,'d/m/Y H:i');
+                ->setTypeConverterOption(
+                    'TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
+                    \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT,
+                    'd/m/Y H:i'
+                );
 
             $this->arguments->getArgument('voyage')->getPropertyMappingConfiguration()->forProperty('arrivalDate')
-                ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
-                    \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT,'d/m/Y H:i');
+                ->setTypeConverterOption(
+                    'TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
+                    \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT,
+                    'd/m/Y H:i'
+                );
         }
     }
 
@@ -376,7 +381,5 @@ class OfficeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 
         $this->flashMessageService('tx_tours.voyageUdpated', 'successfullyStatus', 'OK');
         $this->redirectPage($this->settings['redirectPid']);
-
     }
-
 }

@@ -2402,13 +2402,13 @@ class VojageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
         $limitTime   =  $data['settings.monthLimit'];
 
         $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-             'vjg.uid, vjg.departure_date, vjg.arrival_date, arrival.title AS _from, dst.title AS _to, aprice.price as adult_price, cprice.price as child_price, city.title  as _fromCity',
-             'tx_tours_domain_model_vojage as vjg JOIN tx_tours_domain_model_arrivallocation AS arrival ON  arrival.uid = vjg.from_location JOIN tx_tours_domain_model_destinationlocation AS dst ON  dst.uid = vjg.to_location JOIN tx_tours_domain_model_adultprice AS aprice ON  aprice.uid = vjg.adult_price JOIN tx_tours_domain_model_childprice AS cprice ON cprice.uid = vjg.child_price JOIN tx_tours_domain_model_city AS city ON city.uid =  arrival.city  JOIN tx_tours_domain_model_city AS dCity ON  dCity.uid = dst.city',
-             'vjg.deleted !=1 AND vjg.hidden!=1 AND vjg.departure_date > ' . $currentTime,
-             '',
-             '',
-             ''
-         );
+            'vjg.uid, vjg.departure_date, vjg.arrival_date, arrival.title AS _from, dst.title AS _to, aprice.price as adult_price, cprice.price as child_price, city.title  as _fromCity',
+            'tx_tours_domain_model_vojage as vjg JOIN tx_tours_domain_model_arrivallocation AS arrival ON  arrival.uid = vjg.from_location JOIN tx_tours_domain_model_destinationlocation AS dst ON  dst.uid = vjg.to_location JOIN tx_tours_domain_model_adultprice AS aprice ON  aprice.uid = vjg.adult_price JOIN tx_tours_domain_model_childprice AS cprice ON cprice.uid = vjg.child_price JOIN tx_tours_domain_model_city AS city ON city.uid =  arrival.city  JOIN tx_tours_domain_model_city AS dCity ON  dCity.uid = dst.city',
+            'vjg.deleted !=1 AND vjg.hidden!=1 AND vjg.departure_date > ' . $currentTime,
+            '',
+            '',
+            ''
+        );
 
         $rows = array();
         while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) {

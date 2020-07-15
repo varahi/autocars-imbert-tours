@@ -42,16 +42,16 @@ class OrdersRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     {
         $query = $this->createQuery();
         $query->matching(
-                $query->logicalAnd(
-                                $query->logicalOr(
+            $query->logicalAnd(
+                    $query->logicalOr(
                                     $query->equals('from_id', $voyageId),
                                     $query->equals('to_id', $voyageId)
                                 ),
-                                $query->logicalAnd(
+                    $query->logicalAnd(
                                     $query->equals('status', 1)
                                 )
-                            )
-            );
+                )
+        );
 
         return $query->execute()->toArray();
     }
@@ -65,8 +65,8 @@ class OrdersRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     {
         $query = $this->createQuery();
         $query->matching(
-                $query->equals('status', 0)
-            );
+            $query->equals('status', 0)
+        );
                         
         // LIMIT
                         $query->setLimit(40); // integer

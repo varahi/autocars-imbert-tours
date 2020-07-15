@@ -64,8 +64,8 @@ class VojageRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     {
         $query = $this->createQuery();
         $query->matching(
-                    $query->greaterThan('departureDate', time())
-                );
+            $query->greaterThan('departureDate', time())
+        );
                 
         //on ignore le champ hidden (disabled dans le fichier ext_tables.php)
         $query->getQuerySettings()->setIgnoreEnableFields(true);

@@ -216,7 +216,8 @@ class VojageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     //protected $path_log = '/home/imbert/domains/autocars-imbert.com/public_html/typo3conf/ext/tours/Logs/';
     protected $path_log = '';
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->path_log = PATH_site . 'public_html/typo3conf/ext/tours/Logs/';
     }
 

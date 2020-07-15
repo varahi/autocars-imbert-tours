@@ -310,10 +310,10 @@ class UsersController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     public function get_Trans_id()
     {
         // Dans cet exemple la valeur du compteur est stocké dans un fichier count.txt,incrémenté de 1 et remis à zéro si la valeur est superieure à 899999
-            // ouverture/lock
-            //$filename = "/home/imbert/domains/autocars-imbert.com/public_html/typo3conf/ext/tours/Classes/count.txt";// il faut ici indiquer le chemin du fichier.
-            $confFile = PATH_site . 'typo3conf/ext/tours/Classes/count.txt';
-            $fp = fopen($confFile, 'r+');
+        // ouverture/lock
+        //$filename = "/home/imbert/domains/autocars-imbert.com/public_html/typo3conf/ext/tours/Classes/count.txt";// il faut ici indiquer le chemin du fichier.
+        $confFile = PATH_site . 'typo3conf/ext/tours/Classes/count.txt';
+        $fp = fopen($confFile, 'r+');
         flock($fp, LOCK_EX);
 
         // lecture/incrémentation
