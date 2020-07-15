@@ -4,6 +4,7 @@ namespace Autocars\Tours\Controller;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use \TYPO3\CMS\Core\Messaging\AbstractMessage;
 use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 /***************************************************************
  *
@@ -272,6 +273,20 @@ class OfficeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 
     }
 
+    /**
+     * Load JS Libraries and Code
+     */
+    protected function loadDatePickerSources()
+    {
+
+        /** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
+        $pageRenderer = GeneralUtility::makeInstance( \TYPO3\CMS\Core\Page\PageRenderer::class);
+        $extRelPath = ExtensionManagementUtility::siteRelPath('tours');
+        $pageRenderer->addJsFooterFile($extRelPath . "Resources/Public/JavaScripts/datetimepicker/jquery.datetimepicker.full.js", 'text/javascript', false, false, '', true);
+        $pageRenderer->addCssFile($extRelPath . "Resources/Public/Css/jquery.datetimepicker.min.css", 'stylesheet', 'all', '', true);
+
+    }
+
 
     /**
      * action editVoyage
@@ -286,6 +301,8 @@ class OfficeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     ) {
 
         //\TYPO3\CMS\Core\Utility\DebugUtility::debug($voyage);
+
+        $this->loadDatePickerSources();
 
         $this->view->assign('voyage', $voyage);
 

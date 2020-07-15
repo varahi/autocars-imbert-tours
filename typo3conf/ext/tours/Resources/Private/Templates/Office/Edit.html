@@ -4,30 +4,6 @@
 <f:layout name="Default" />
 <f:section name="main">
 
-    <f:comment>
-        <f:form action="updateVojage"
-                name="voyage"
-                object="{voyage}"
-                extensionName="Tours"
-                pluginName="VojageTest"
-                controller="Vojage" >
-
-        </f:form>
-
-        <f:form action="updateVojage"
-                name="voyage"
-                pluginName="Office"
-                extensionName="Tours"
-                controller="Office"
-                pageUid="82"
-                arguments="{voyage: voyage}"
-                noCache="0"
-                noCacheHash="0">
-
-        </f:form>
-    </f:comment>
-
-
     <h1>Edit office action</h1>
 
     <f:form action="updateVojage"
@@ -41,10 +17,8 @@
                 <th>Places max</th>
                 <th>Date de départ</th>
                 <th>Ville de départ</th>
-                <!-- <th>Heure de départ</th> -->
                 <th>Date d'arrivée</th>
                 <th>Ville d'arrivée</th>
-                <!-- <th>Heure d'arrivée</th> -->
             </tr>
 
             <tr>
@@ -53,14 +27,13 @@
                     <f:form.textfield class="date" id="departureDate" property="departureDate" value="{voyage.departureDate->f:format.date(format: 'd/m/Y H:i')}" />
                 </td>
                 <td>
-                    <p>
-
+                    <div class="input-select">
                         <f:form.select
                                 property="fromLocation"
                                 options="{fromLocation}"
                                 optionLabelField="title"
                                 optionValueField="uid" />
-                    </p>
+                    </div>
                 </td>
                 <!-- Time H:i -->
                 <td>
@@ -69,13 +42,13 @@
                     </p>
                 </td>
                 <td>
-                    <p>
+                    <div class="input-select">
                         <f:form.select
                                 property="toLocation"
                                 options="{toLocation}"
                                 optionLabelField="title"
                                 optionValueField="uid" />
-                    </p>
+                    </div>
                 </td>
             </tr>
 
@@ -84,7 +57,15 @@
         <f:form.submit value="{f:translate(id:'tx_tours.submit')}" class="button-submitbtn" />
     </f:form>
 
-
-    <!-- ToDo: set datetime picker with time https://xdsoft.net/jqplugins/datetimepicker/ -->
+    <script>
+        jQuery(document).ready(function () {
+            'use strict';
+            jQuery('#departureDate, #arrivalDate').datetimepicker({
+                format:'d/m/Y H:i',
+                inline:false,
+                lang:'fr',
+            });
+        });
+    </script>
 
 </f:section>

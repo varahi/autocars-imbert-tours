@@ -12,3 +12,11 @@
 .edit-select {
 
 }
+.date {
+    padding: 0;
+    width: 200px;
+}
+
+.bt-edit {
+    padding-top: 10px;
+}
