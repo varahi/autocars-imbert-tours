@@ -287,6 +287,55 @@ class OfficeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     }
 
 
+    // T3 Development
+    /**
+     * Set TypeConverter option for date time
+     *
+     * @return void
+     */
+    public function initializeUpdateVojageAction()
+    {
+        if ($this->arguments->hasArgument('voyage')) {
+            $this->arguments->getArgument('voyage')->getPropertyMappingConfiguration()->forProperty('departureDate')
+                ->setTypeConverterOption(
+                    'TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
+                    \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT,
+                    'd/m/Y H:i'
+                );
+
+            $this->arguments->getArgument('voyage')->getPropertyMappingConfiguration()->forProperty('arrivalDate')
+                ->setTypeConverterOption(
+                    'TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
+                    \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT,
+                    'd/m/Y H:i'
+                );
+        }
+    }
+
+    /**
+     * Set TypeConverter option for date time
+     *
+     * @return void
+     */
+    public function initializeCloneVojageAction()
+    {
+        if ($this->arguments->hasArgument('voyage')) {
+            $this->arguments->getArgument('voyage')->getPropertyMappingConfiguration()->forProperty('departureDate')
+                ->setTypeConverterOption(
+                    'TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
+                    \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT,
+                    'd/m/Y H:i'
+                );
+
+            $this->arguments->getArgument('voyage')->getPropertyMappingConfiguration()->forProperty('arrivalDate')
+                ->setTypeConverterOption(
+                    'TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
+                    \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT,
+                    'd/m/Y H:i'
+                );
+        }
+    }
+
     /**
      * action editVoyage
      *
@@ -334,29 +383,49 @@ class OfficeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 
 
     /**
-     * Set TypeConverter option for date time
+     * action editNewVoyage
+     *
+     * @param \Autocars\Tours\Domain\Model\Vojage $voyage
+     * @ignorevalidation $voyage
      *
      * @return void
      */
-    public function initializeUpdateVojageAction()
-    {
-        if ($this->arguments->hasArgument('voyage')) {
-            $this->arguments->getArgument('voyage')->getPropertyMappingConfiguration()->forProperty('departureDate')
-                ->setTypeConverterOption(
-                    'TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
-                    \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT,
-                    'd/m/Y H:i'
-                );
+    public function editNewAction(
+        \Autocars\Tours\Domain\Model\Vojage $voyage
+    ) {
 
-            $this->arguments->getArgument('voyage')->getPropertyMappingConfiguration()->forProperty('arrivalDate')
-                ->setTypeConverterOption(
-                    'TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
-                    \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT,
-                    'd/m/Y H:i'
-                );
-        }
+
+        $this->loadDatePickerSources();
+
+        $this->view->assign('voyage', $voyage);
+
+        $arrivalList = $this->arrivalLocationRepository->findAll();
+        $this->view->assign('arrivalList', $arrivalList);
+
+        $destinationList = $this->destinationLocationRepository->findAll();
+        $this->view->assign('destinationList', $destinationList);
+
+        $tabZone = $this->tabZone;
+        $this->view->assign('tabZone', $tabZone);
+
+        //on récupère la zone de départ (Hautes-Alpes, Paris, Marseille)
+        $departId = $this->tabArrival[$voyage->getFromLocation()->getUid()];
+        $voyage->setZoneDepart($this->tabZone[$departId]);
+
+        $arriveeId = $this->tabDestination[$voyage->getToLocation()->getUid()];
+        $voyage->setZoneArrivee($this->tabZone[$arriveeId]);
+
+        $totalPlacesReservees = $voyage->getPlacesReservees();
+        $tabIdVoyage[] = $voyage->getUid();
+
+        $voyage->setTotalPlacesReservees($totalPlacesReservees);
+        $voyage->setTabIdVoyage($tabIdVoyage);
+
+        //$fromLocation = $this->arrivalLocationRepository->findAll();
+        $this->view->assign('fromLocation', $this->arrivalLocationRepository->findAll());
+        $this->view->assign('toLocation', $this->destinationLocationRepository->findAll());
+
     }
-
 
     /**
      * action update
@@ -386,14 +455,13 @@ class OfficeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     /**
      * action editVoyage
      *
-     * @param \Autocars\Tours\Domain\Model\Vojage $voyage
+     *  @param \Autocars\Tours\Domain\Model\Vojage $voyage
      * @ignorevalidation $voyage
      *
      * @return void
      */
-    public function cloneAction(
-        \Autocars\Tours\Domain\Model\Vojage $voyage
-    ) {
+    public function cloneVojageAction(\Autocars\Tours\Domain\Model\Vojage $voyage)
+    {
 
         // Get object data
         $departureDate = $voyage->getDepartureDate();
@@ -408,7 +476,7 @@ class OfficeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
         $zoneArrivee = $voyage->getZoneArrivee();
         $totalPlacesReservees = $voyage->getTotalPlacesReservees();
         $tabIdVoyage = $voyage->getTabIdVoyage();
-        $hidden = '1';
+        $hidden = '0';
 
         // New empty vojage object
         /** @var \Autocars\Tours\Domain\Model\Vojage $newVojage */
@@ -436,5 +504,6 @@ class OfficeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 
         $this->flashMessageService('tx_tours.voyageUdpated', 'successfullyStatus', 'OK');
         $this->redirectPage($this->settings['redirectPid']);
+
     }
 }

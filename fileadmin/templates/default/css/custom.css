@@ -20,3 +20,8 @@
 .bt-edit {
     padding-top: 10px;
 }
+.edit-btn {
+    background: #0f4a71 !important;
+    color: #fff;
+    padding-left: 25px !important;
+}

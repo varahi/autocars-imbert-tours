@@ -26,7 +26,7 @@ if (!defined('TYPO3_MODE')) {
     // non-cacheable actions
     array(
         //'Vojage' => 'create, list, findDestinations, firstReservationStep, secondReservationStep, filterByDate, findDestinationByAreaDateAndArrivalCity, findAllVojages, edit, updateVojage',
-        'Vojage' => 'findVojagesByLocation',
+        'Vojage' => 'findVojagesByLocation, middleOffice',
         'Users' => 'new, create',
     )
 );
@@ -36,10 +36,10 @@ if (!defined('TYPO3_MODE')) {
     'Autocars.' . $_EXTKEY,
     'Office',
     array(
-        'Office' => 'edit, updateVojage, clone',
+        'Office' => 'edit, updateVojage, editNew, cloneVojage',
     ),
     // non-cacheable actions
     array(
-        'Office' => 'edit, updateVojage, clone',
+        'Office' => 'edit, updateVojage, editNew, cloneVojage',
     )
 );
