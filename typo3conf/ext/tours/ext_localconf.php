@@ -36,10 +36,10 @@ if (!defined('TYPO3_MODE')) {
     'Autocars.' . $_EXTKEY,
     'Office',
     array(
-        'Office' => 'edit, updateVojage',
+        'Office' => 'edit, updateVojage, clone',
     ),
     // non-cacheable actions
     array(
-        'Office' => 'edit, updateVojage',
+        'Office' => 'edit, updateVojage, clone',
     )
 );

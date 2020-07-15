@@ -382,4 +382,59 @@ class OfficeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
         $this->flashMessageService('tx_tours.voyageUdpated', 'successfullyStatus', 'OK');
         $this->redirectPage($this->settings['redirectPid']);
     }
+
+    /**
+     * action editVoyage
+     *
+     * @param \Autocars\Tours\Domain\Model\Vojage $voyage
+     * @ignorevalidation $voyage
+     *
+     * @return void
+     */
+    public function cloneAction(
+        \Autocars\Tours\Domain\Model\Vojage $voyage
+    ) {
+
+        // Get object data
+        $departureDate = $voyage->getDepartureDate();
+        $arrivalDate = $voyage->getArrivalDate();
+        $fromLocation = $voyage->getFromLocation();
+        $toLocation = $voyage->getToLocation();
+        $childPrice = $voyage->getChildPrice();
+        $adultPrice = $voyage->getAdultPrice();
+        $placesMax = $voyage->getPlacesMax();
+        $placesReservees = $voyage->getPlacesReservees();
+        $zoneDepart = $voyage->getZoneDepart();
+        $zoneArrivee = $voyage->getZoneArrivee();
+        $totalPlacesReservees = $voyage->getTotalPlacesReservees();
+        $tabIdVoyage = $voyage->getTabIdVoyage();
+        $hidden = '1';
+
+        // New empty vojage object
+        /** @var \Autocars\Tours\Domain\Model\Vojage $newVojage */
+        $newVojage = GeneralUtility::makeInstance('Autocars\\Tours\\Domain\\Model\\Vojage');
+
+        // Clone object
+        if ($newVojage) {
+            $newVojage->setDepartureDate($departureDate);
+            $newVojage->setArrivalDate($arrivalDate);
+            $newVojage->setFromLocation($fromLocation);
+            $newVojage->setToLocation($toLocation);
+            $newVojage->setChildPrice($childPrice);
+            $newVojage->setAdultPrice($adultPrice);
+            $newVojage->setPlacesMax($placesMax);
+            $newVojage->setPlacesReservees($placesReservees);
+            $newVojage->setZoneDepart($zoneDepart);
+            $newVojage->setZoneArrivee($zoneArrivee);
+            $newVojage->setTotalPlacesReservees($totalPlacesReservees);
+            $newVojage->setTabIdVoyage($tabIdVoyage);
+            $newVojage->setHidden($hidden);
+
+            $this->vojageRepository->add($newVojage);
+            $this->persistenceManager->persistAll();
+        }
+
+        $this->flashMessageService('tx_tours.voyageUdpated', 'successfullyStatus', 'OK');
+        $this->redirectPage($this->settings['redirectPid']);
+    }
 }
