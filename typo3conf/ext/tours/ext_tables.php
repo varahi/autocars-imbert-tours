@@ -28,7 +28,7 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignat
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
     $_EXTKEY,
     'Office',
-    'Vojage Office test'
+    'Edit and clone Voyages'
 );
 
 
