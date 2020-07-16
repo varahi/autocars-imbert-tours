@@ -249,6 +249,9 @@
 			<trans-unit id="tx_tours.voyageUdpated">
 				<source>Vojage Updated</source>
 			</trans-unit>
+			<trans-unit id="tx_tours.voyageCreated">
+				<source>New Vojage Created</source>
+			</trans-unit>
 			<trans-unit id="successfullyStatus">
 				<source><![CDATA[Successfully]]></source>
 			</trans-unit>

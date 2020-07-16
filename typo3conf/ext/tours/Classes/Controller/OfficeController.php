@@ -502,7 +502,7 @@ class OfficeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
             $this->persistenceManager->persistAll();
         }
 
-        $this->flashMessageService('tx_tours.voyageUdpated', 'successfullyStatus', 'OK');
+        $this->flashMessageService('tx_tours.voyageCreated', 'successfullyStatus', 'OK');
         $this->redirectPage($this->settings['redirectPid']);
 
     }

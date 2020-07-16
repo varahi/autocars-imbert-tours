@@ -25,3 +25,13 @@
     color: #fff;
     padding-left: 25px !important;
 }
+
+.tx-tours ul li {
+    color: #ff0000 !important;
+    padding-left: 0 !important;
+}
+
+.tx-tours ul li::before {
+    content: "" !important;
+    margin-right: 0 !important;
+}
