@@ -29,10 +29,18 @@
                         <td><f:form.textfield name="placeMax" value="{voyage.placesMax}" /> <a href="#" class="bt-save" title="Sauvegarder">Sauvegarder</a></td>
                         <td><p>{voyage.totalPlacesReservees}</p></td>
                         <td><p><f:format.date format="%A">{voyage.departureDate}</f:format.date><br><f:format.date format="d/m/Y">{voyage.departureDate}</f:format.date></p></td>
-                        <td><p>{voyage.zoneDepart}</p></td>
+						<f:comment>
+							<!-- Paralmeter before update by T3Dev -->
+							<td><p>{voyage.zoneDepart}</p></td>
+						</f:comment>
+						<td><p>{voyage.fromLocation.title}</p></td>
                         <td><p><f:format.date format="H:i">{voyage.departureDate}</f:format.date></p></td>
                         <td><p><f:format.date format="%A">{voyage.arrivalDate}</f:format.date><br><f:format.date format="d/m/Y">{voyage.arrivalDate}</f:format.date></p></td>
-                        <td><p>{voyage.zoneArrivee}</p></td>
+						<f:comment>
+							<!-- Paralmeter before update by T3Dev -->
+							<td><p>{voyage.zoneArrivee}</p></td>
+						</f:comment>
+						<td><p>{voyage.toLocation.title}</p></td>
                         <td><p><f:format.date format="H:i">{voyage.arrivalDate}</f:format.date></p></td>
                         <td>
 							<p>
