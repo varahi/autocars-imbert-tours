@@ -321,6 +321,11 @@
 				<source>Phone</source>
 				<target>Téléphone</target>
 			</trans-unit>
+			
+			<trans-unit id="tx_tours.submit">
+				<source>Sumbit</source>
+				<target>Soumettre</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
